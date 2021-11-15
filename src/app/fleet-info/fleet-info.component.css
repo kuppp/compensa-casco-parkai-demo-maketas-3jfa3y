@@ -19,13 +19,14 @@
   }
 
   .plStatus1 {
-    background-color: red;
+    color: red;
+    font-weight: 800;
   }
 
   .plStatus0 {
-    background-color: green;
+    color: green;
   }
 
   .plStatus2 {
-    background-color: rgb(9, 0, 128);
+    color: rgb(9, 0, 128);
   }

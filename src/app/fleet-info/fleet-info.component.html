@@ -50,10 +50,11 @@
       [value]="policies"
       [scrollable]="true"
       scrollHeight="550px"
-      [rowHover]="true"
+      [rowHover]="true" [globalFilterFields]="['vehicle.vastnr','vehicle.vin','policy','type','status']"
       resizableColumns="true"
       columnResizeMode="expand"
       styleClass="p-datatable-gridline p=p-datatable-sm"
+      dataKey="polisas"
     >
       <ng-template pTemplate="caption">
         <div class="table-header">
@@ -75,9 +76,30 @@
           <th style="max-width:30px;margin:2px;padding:5px;">
             <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
           </th>
-          <th style="max-width:30px;"></th>
+          <th style="max-width:30px;margin:0px;padding:0px;">
+        
+          <p-columnFilter field="flag" matchMode="in" display="menu" [showMatchModes]="false" [showOperator]="false" [showAddButton]="false">flag
+         
+          <ng-template pTemplate="filter" let-value let-filter="filterCallback">
+             
+            <p-multiSelect [ngModel]="value" [options]="statuses" placeholder="Any" (onChange)="filter($event.value)" optionLabel="name">
+
+              
+                  <ng-template let-option pTemplate="item">
+                      <div class="p-multiselect-representative-option">
+                        
+                        
+                          <span ngClass="pi {{option.image}}"></span> {{option.name}}
+                      </div>
+                  </ng-template>
+              </p-multiSelect>
+          </ng-template>
+      </p-columnFilter>
+
+
+          </th>
           <th pResizableColumn pSortableColumn="policy">Poliso numeris</th>
-          <th pResizableColumn pSortableColumn="status">Statusas</th>
+        
           <th pResizableColumn pSortableColumn="beginDate">Pradžia</th>
           <th pResizableColumn pSortableColumn="endDate">Pabaiga</th>
           <th pResizableColumn pSortableColumn="vehicle.type">Tipas</th>
@@ -102,16 +124,17 @@
           <td  style="max-width:30px">
             <p-tableCheckbox
               [value]="policy"
-              *ngIf="policy.status == 2"
+             
             ></p-tableCheckbox>
           </td>
-          <td style="max-width:30px;" ngClass="plStatus{{ policy.flag}}">{{ policy.flag}}</td>
-          <td>{{ policy.policy }}</td>
-          <td>
-            <p-tag *ngIf="policy.status == 1" severity="danger">
-              {{ policy.error }}
-            </p-tag>
+          <td style="max-width:25px;" ngClass="plStatus{{ policy.flag}}">
+            <i Class="pi pi-check-circle" *ngIf="policy.flag == 0" pTooltip="Polisas patvirtintas ir be klaidų"></i>
+            <i Class="pi pi-bell" *ngIf="policy.flag == 1" pTooltip="Polisas su klaidomis"></i>
+            <i Class="pi pi-circle" *ngIf="policy.flag == 2" pTooltip="Pasiūlymas paruoštas ir galima sugeneruoti"></i>
+            
+
           </td>
+          <td>{{ policy.policy }}</td>
           <td>{{ policy.beginDate }}</td>
           <td>{{ policy.endDate }}</td>
           <td>{{ policy.vehicle.type }}</td>

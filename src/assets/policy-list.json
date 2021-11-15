@@ -1,7 +1,7 @@
 {
   "data": [
     {
-      "flag": "1",
+      "flag": "0",
       "policy": "190 0007564",
       "beginDate": "2021-11-20",
       "endDate": "2022-11-19",
@@ -22,7 +22,7 @@
       }, "status":"2"
     },
     {
-      "flag": "1",
+      "flag": "2",
       "policy": "190 0007565",
       "beginDate": "2021-11-20",
       "endDate": "2022-11-19",
@@ -43,7 +43,7 @@
       }, "status":"1", "error":"Polisas nutrauktas"
     },
     {
-      "flag": "0",
+      "flag": "1",
       "policy": "190 0007566",
       "beginDate": "2021-12-02",
       "endDate": "2022-11-19",
@@ -106,7 +106,7 @@
       }, "status":"2"
     },
     {
-      "flag": "0",
+      "flag": "2",
       "policy": "190 0007569",
       "beginDate": "2021-12-04",
       "endDate": "2022-11-19",
@@ -144,6 +144,29 @@
         "name": "Išplėstinė Pagalba, Vairuotojas ir keleiviai"
       },
       "error": "Neapskaičiuota įmoka", "status":"1"
+    },
+
+    {
+      "flag": "1",
+      "policy": "190 00075688",
+      "beginDate": "2021-11-20",
+      "endDate": "2022-11-19",
+      "vehicle": {
+        "type": "Lengvieji automobiliai",
+        "make": "VW",
+        "model": "PASSAT",
+        "plateNo": "HBN234",
+        "vinNo": "YARVEAHHWGZ125456",
+        "manufYear": "2018",
+        "value": "7000",
+        "signalLevel":"3"
+      },
+      "premium": "",
+      "additionalInsurance": {
+        "premium": "",
+        "name": "Išplėstinė Pagalba, Vairuotojas ir keleiviai"
+      },
+      "status":"0"
     },
     {
       "flag": "-1",

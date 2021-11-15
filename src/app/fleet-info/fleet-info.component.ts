@@ -14,7 +14,7 @@ export class FleetInfoComponent implements OnInit {
   actionMenuItems: MenuItem[];
   paymentSchedule: Schedule[];
   parkConditions: Condition[];
-
+  statuses: any[];
   panel1: number = 100;
   panel2: number = 0;
 
@@ -55,6 +55,12 @@ export class FleetInfoComponent implements OnInit {
       {conditionType: 'Papildomi draudimai', insType: 'Krovininai automobiliai iki 3.5 t', value:'Vairuotojai ir keleveikiai'},
       {conditionType: 'Papildomi draudimai', insType: 'Krovininai automobiliai', value:'Vairuotojai ir keleveikiai'}
   ]
+
+  this.statuses = [
+    {name:"Patvirtintas", value: "0", image: "pi-check-circle" },
+    {name:"Klaida", value: "1", image: "pi-bell" },
+    {name:"Nepatvirtintas", value: "2", image: "pi-circle" }
+  ];
   }
 
 }
