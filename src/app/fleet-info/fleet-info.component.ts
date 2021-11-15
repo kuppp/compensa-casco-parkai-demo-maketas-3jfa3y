@@ -50,6 +50,8 @@ export class FleetInfoComponent implements OnInit {
       {conditionType: 'Kriterijai', insType: 'Lengvieji automobiliai', ageFrom: 9, ageTo: 50, value:'TP remontas Draudiko pasirinkimu'},
       {conditionType: 'Kriterijai', insType: 'Lengvieji automobiliai', ageFrom: 0, ageTo: 9, value:'TP remontas Draudėjo pasirinkimu'},
       {conditionType: 'Papildomi draudimai', insType: 'Lengvieji automobiliai', value:'Išplėstinė pagalba kelyje, Vairuotojai ir keleveikiai'},
+      {conditionType: 'Išskaita', insType: 'Lengvieji automobiliai', value:'50 EUR / 10% vagystei'},
+      {conditionType: 'Išskaita', insType: 'Krovininai automobiliai', value:'100 EUR / 10% vagystei'},
       {conditionType: 'Papildomi draudimai', insType: 'Krovininai automobiliai iki 3.5 t', value:'Vairuotojai ir keleveikiai'},
       {conditionType: 'Papildomi draudimai', insType: 'Krovininai automobiliai', value:'Vairuotojai ir keleveikiai'}
   ]

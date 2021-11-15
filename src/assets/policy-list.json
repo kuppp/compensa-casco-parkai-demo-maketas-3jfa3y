@@ -12,7 +12,8 @@
         "plateNo": "LSR385",
         "vinNo": "YARVEAHHWGZ125853",
         "manufYear": "2018",
-        "value": "12000"
+        "value": "12000",
+        "signalLevel":"3"
       },
       "premium": "500",
       "additionalInsurance": {
@@ -32,7 +33,8 @@
         "plateNo": "LSR387",
         "vinNo": "YARVEAHHWGZ125456",
         "manufYear": "2018",
-        "value": "12000"
+        "value": "12000",
+        "signalLevel":"3"
       },
       "premium": "500",
       "additionalInsurance": {
@@ -52,7 +54,8 @@
         "plateNo": "ABB111",
         "vinNo": "YARVEAHHWGZ125456",
         "manufYear": "2011",
-        "value": "22000"
+        "value": "22000",
+        "signalLevel":"3"
       },
       "premium": "4500",
       "additionalInsurance": {
@@ -72,7 +75,8 @@
         "plateNo": "ABB112",
         "vinNo": "YARVEAHHWGZ125456",
         "manufYear": "2011",
-        "value": "31000"
+        "value": "31000",
+        "signalLevel":"3"
       },
       "premium": "4500",
       "additionalInsurance": {
@@ -92,7 +96,8 @@
         "plateNo": "ABB113",
         "vinNo": "YARVEAHHWGZ125455",
         "manufYear": "2011",
-        "value": "18000"
+        "value": "18000",
+        "signalLevel":"3"
       },
       "premium": "4500",
       "additionalInsurance": {
@@ -112,7 +117,8 @@
         "plateNo": "ABB115",
         "vinNo": "YARVEAHHWGZ156556",
         "manufYear": "2011",
-        "value": "5000"
+        "value": "5000",
+        "signalLevel":"3"
       }, "additionalInsurance": {},
       "premium": "4300", "status":"2"
     },
@@ -129,7 +135,8 @@
         "plateNo": "HBN234",
         "vinNo": "YARVEAHHWGZ125456",
         "manufYear": "2018",
-        "value": "7000"
+        "value": "7000",
+        "signalLevel":"3"
       },
       "premium": "",
       "additionalInsurance": {

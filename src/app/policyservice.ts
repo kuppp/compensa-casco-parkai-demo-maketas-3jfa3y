@@ -30,6 +30,7 @@ export interface Policy {
   premium?: number;
   additionalInsurance: Insurance;
   status?:string;
+  signalLevel?: number;
 }
 
 export interface Vehicle {

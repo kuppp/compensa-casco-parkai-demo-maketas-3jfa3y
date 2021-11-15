@@ -29,15 +29,20 @@ export class AppComponent {
     page: string = 'fleet';
     blankScreen: boolean = true;
     policies: Policy[];
-  
+    mainMenu: MenuItem[];
+
     constructor(private PolicyListService: PolicyListService) { }
 
     ngOnInit() {
-       
+        this.mainMenu = [
+            {label: 'Naujas', icon: 'pi pi-fw pi-plus'},
+            {label: 'Paieška', icon: 'pi pi-fw pi-search'}
+        ];
 
     }
 
     ShowPage(pageName: string){
         this.page = pageName;
     }
+
 }

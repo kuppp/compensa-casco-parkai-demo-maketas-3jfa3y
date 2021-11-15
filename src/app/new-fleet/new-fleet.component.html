@@ -70,24 +70,20 @@
         <div class="p-col-6 p-md-10"></div>
       </div>
       <br />
+
       <p-toolbar>
         <div class="p-toolbar-group-left">
-        <p-button
-        label="Atgal"
-        icon="pi pi-arrow-circle-left"
-        iconPos="left"
-        styleClass="p-button-primary p-mb-2 p-mr-2 btn"
-        (click)=" newTabConditions = true; blankScreen = true;"
-      ></p-button>
           <p-button
             label="Toliau"
             icon="pi pi-arrow-circle-right"
             iconPos="right"
-            styleClass="p-button-primary p-mb-2 p-mr-2 btn"
+            styleClass="p-button-primary p-mb-2 p-m-2 p-p-2 btn"
             (click)=" newTabConditions = true; this.index = 1;"
           ></p-button>
         </div>
       </p-toolbar>
+
+      
     </div>
   </p-tabPanel>
 
@@ -103,7 +99,7 @@
     >
       <ng-template pTemplate="header">
         <tr>
-          <th style="width:200px">Draudimo tipas</th>
+          <th style="width:240px">Draudimo tipas</th>
           <th style="width:100px">Amžius nuo [</th>
           <th style="width:100px">Amžius iki )</th>
           <th style="min-width:200px">Reikšmė</th>
@@ -120,7 +116,7 @@
 
       <ng-template pTemplate="body" let-condition let-rowIndex="rowIndex">
         <tr>
-          <td style="width:200px">
+          <td style="width:240px">
             {{ condition.conditionType }}
           </td>
           <td style="width:100px">

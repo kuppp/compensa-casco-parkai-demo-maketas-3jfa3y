@@ -17,3 +17,15 @@
   font-weight: 600;
   padding: 3px;
   }
+
+  .plStatus1 {
+    background-color: red;
+  }
+
+  .plStatus0 {
+    background-color: green;
+  }
+
+  .plStatus2 {
+    background-color: rgb(9, 0, 128);
+  }
