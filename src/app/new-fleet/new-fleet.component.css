@@ -1,0 +1,22 @@
+:host >>> table td, th {
+  font-size:0.8em;
+  margin: 2px;
+  border: 5px solid red;
+padding: 1px;
+  }
+
+  :host ::ng-deep .p-datatable .p-datatable-tbody > tr > td {
+    border: 1px solid #f1f1f1;
+    padding: 2px;
+  }
+
+  :host >>> label, input {
+    font-size:12px;
+    font-weight: 600;
+    }
+  
+    :host >>> .btn {
+      background-color: rgb(0,134,65);
+      border: 0px;
+      margin:3px;
+      }

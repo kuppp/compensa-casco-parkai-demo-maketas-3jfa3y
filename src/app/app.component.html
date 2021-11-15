@@ -1,0 +1,146 @@
+<div class="main-contentx">
+  <h3>KASKO parkų draudimas</h3>
+  <div class="card right">
+  <p-toolbar *ngIf="blankScreen == true"> 
+    <div class="p-toolbar-group-left">
+      <p-button
+        label="Naujas parko dok."
+        icon="pi pi-plus"
+        iconPos="left"
+        (click)="page = 'new-fleet';blankScreen = false;"
+        styleClass="p-button-secondary p-mb-2 p-mr-2 btn"
+      ></p-button>
+      <p-button
+        label="Paieška"
+        icon="pi pi-search"
+        iconPos="left"
+        (click)="page = 'open-fleet';SearchResults = false;blankScreen = false;"
+        styleClass="p-button-secondary p-mb-2 p-mr-2 btn"
+      ></p-button>
+    </div>  
+  </p-toolbar>
+</div>
+
+<div *ngIf="page == 'fleet'">
+  <app-fleet-info></app-fleet-info>
+</div>
+  
+<div *ngIf="page == 'open-fleet'">
+  
+  
+<p-tabView>
+
+<p-tabPanel header="Atidaryti parko draudimą">
+
+  <div class="p-fluid">
+    <div class="p-field p-grid">
+      <label for="firstname4" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0"
+        >Sutarties numeris</label
+      >
+      <div class="p-col-12 p-md-10">
+        <input
+          id="firstname4"
+          type="text"
+          pInputText
+          
+          value="PARK 00000001"
+          style="width:400px"
+        />
+      </div>
+    </div>
+
+    <div class="p-field p-grid">
+      <label for="lastname4" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0"
+      ></label>
+
+      <div class="p-col-12 p-md-3">
+      
+        <p-button
+        label="ieškoti"
+        icon="pi pi-search"
+        iconPos="left"
+        styleClass="p-button-secondary p-mb-2 p-mr-2"
+        (click)="SearchResults = true;"
+        diasbled
+      ></p-button>     </div>
+      <div class="p-col-6 p-md-2"></div>
+    </div>
+
+<div *ngIf="SearchResults">
+    <div class="p-field p-grid">
+      <label for="lastname4" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0"
+        >Draudėjas</label
+      >
+      <div class="p-col-12 p-md-10">
+        <input
+          id="lastname4"
+          type="text"
+          pInputText
+          disabled
+          value="UAB TRANSPORTO ĮMONĖ"
+          style="width:400px"
+        />
+      </div>
+    </div>
+    <div class="p-field p-grid">
+      <label for="lastname4" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0"
+        >Išrašymo data</label
+      >
+      <div class="p-col-12 p-md-10">
+        <input
+          id="lastname4"
+          type="text"
+          pInputText
+          disabled
+          value="2021-12-31"
+          style="width:400px"
+        />
+      </div>
+    </div>
+    <div class="p-field p-grid">
+      <label for="lastname4" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0"
+        >Objektų kiekis</label
+      >
+      <div class="p-col-12 p-md-10">
+        <input
+          id="lastname4"
+          type="text"
+          pInputText
+          disabled
+          value="12"
+          style="width:400px"
+        />
+      </div>
+    </div>
+
+
+
+    <div class="p-field p-grid">
+      <label for="lastname4" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0"
+      ></label>
+
+      <div class="p-col-12 p-md-3"> <p-button
+      label="Atidaryti"
+      icon="pi pi-folder-open"
+      iconPos="left"
+      styleClass="p-button-primary p-mb-2 p-mr-2 btn"
+      (click)="page = 'fleet'"
+    ></p-button>
+
+      </div>
+      <div class="p-col-6 p-md-2"></div>
+    </div>
+  </div>
+  </div>
+
+
+</p-tabPanel>
+</p-tabView>
+
+  </div>
+
+  <div *ngIf="page == 'new-fleet'">
+    <app-new-fleet></app-new-fleet>
+  </div>
+
+</div>
