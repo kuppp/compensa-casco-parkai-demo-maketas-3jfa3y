@@ -18,10 +18,10 @@ export class PolicyListService {
 export interface Schedule {
   number?: number;
   date?: string | Date;
-
 }
 export interface Policy {
   flag?: number;
+  plId?: number;
   policy?: string;
   beginDate?: string | Date;
   endDate?: string | Date;
@@ -29,7 +29,7 @@ export interface Policy {
   error?: string;
   premium?: number;
   additionalInsurance?: Insurance;
-  status?:string;
+  status?: string;
   signalLevel?: number;
 }
 

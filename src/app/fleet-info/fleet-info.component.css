@@ -3,6 +3,7 @@
   margin: 2px;
   padding: 0px;
   border-collapse: collapse;
+ 
   }
 
 
@@ -10,7 +11,14 @@
 :host ::ng-deep .p-datatable .p-datatable-tbody > tr > td {
   border: 1px solid #f1f1f1;
   padding: 2px;
+ 
 }
+:host ::ng-deep  .p-datatable-thead > tr > th {
+  white-space: normal;
+  padding: 2px;
+ margin: 2px;
+}
+
 
 :host >>> label, input {
   font-size:12px;

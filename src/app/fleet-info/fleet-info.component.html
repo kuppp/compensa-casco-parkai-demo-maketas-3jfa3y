@@ -53,8 +53,8 @@
       [rowHover]="true" [globalFilterFields]="['vehicle.vastnr','vehicle.vin','policy','type','status']"
       resizableColumns="true"
       columnResizeMode="expand"
-      styleClass="p-datatable-gridline p=p-datatable-sm"
-      dataKey="polisas"
+      styleClass="p-datatable-gridline p-datatable-sm"
+      dataKey="plId"
     >
       <ng-template pTemplate="caption">
         <div class="table-header">
@@ -82,11 +82,11 @@
          
           <ng-template pTemplate="filter" let-value let-filter="filterCallback">
              
-            <p-multiSelect [ngModel]="value" [options]="statuses" placeholder="Any" (onChange)="filter($event.value)" optionLabel="name">
+            <p-multiSelect [ngModel]="value" [options]="flags" placeholder="Any" (onChange)="filter($event.value)" optionLabel="name">
 
               
                   <ng-template let-option pTemplate="item">
-                          <span ngClass="pi {{option.image}}"></span> {{option.name}}
+                          <span ngClass="pi {{option.image}}"></span>&nbsp;&nbsp;{{option.name}}
                   </ng-template>
               </p-multiSelect>
           </ng-template>
@@ -103,6 +103,7 @@
           <th pResizableColumn pSortableColumn="vehicle.model">Modelis</th>
           <th pResizableColumn>Valstybinis numeris</th>
           <th pResizableColumn>VIN</th>
+          <th pResizableColumn>Signalizacijos lygis</th>
           <th pResizableColumn>Vertė</th>
           <th pResizableColumn>Įmoka</th>
           <th pResizableColumn pSortableColumn="additionalInsurance.name">Papildomi dr.</th>
@@ -110,11 +111,11 @@
         </tr>
       </ng-template>
 
-      <ng-template pTemplate="body" let-policy>
+      <ng-template pTemplate="body" let-policy let-expanded="expanded">
         <tr
           class="p-selectable-row"
-          [ngClass]="{ 'row-not-imported': policy.status == 0 }"
-          (click)="showMoreInfo = true;"
+          [ngClass]="{ 'row-not-imported': policy.flag == '-1' }"
+          (click)="showMoreInfo = true;" [pRowToggler]="policy" 
         >
 
           <td  style="max-width:30px">
@@ -124,13 +125,12 @@
             ></p-tableCheckbox>
           </td>
           <td style="max-width:25px;" ngClass="plStatus{{ policy.flag}}">
-            <i Class="pi pi-check-circle" *ngIf="policy.flag == 0" pTooltip="Polisas patvirtintas ir be klaidų"></i>
-            <i Class="pi pi-bell" *ngIf="policy.flag == 1" pTooltip="Polisas su klaidomis"></i>
-            <i Class="pi pi-circle" *ngIf="policy.flag == 2" pTooltip="Pasiūlymas paruoštas ir galima sugeneruoti"></i>
-            
-
+            <i Class="pi pi-circle-fill" *ngIf="policy.flag == 0" pTooltip="Polisas patvirtintas ir be klaidų"></i>
+            <i Class="pi pi-circle-fill" *ngIf="policy.flag == 1" pTooltip="Polisas su klaidomis"></i>
+            <i Class="pi pi-circle-fill" *ngIf="policy.flag == 2" pTooltip="Pasiūlymas paruoštas ir galima sugeneruoti"></i>
+            </td>
+          <td>{{ policy.policy }}            
           </td>
-          <td>{{ policy.policy }}</td>
           <td>{{ policy.beginDate }}</td>
           <td>{{ policy.endDate }}</td>
           <td>{{ policy.vehicle.type }}</td>
@@ -138,6 +138,7 @@
           <td>{{ policy.vehicle.model }}</td>
           <td>{{ policy.vehicle.plateNo }}</td>
           <td>{{ policy.vehicle.vinNo }}</td>
+          <td>{{ policy.vehicle.signalLevel }}</td>
           <td>{{ policy.vehicle.value }}</td>
           <td>{{ policy.premium }}</td>
           <td>{{ policy.additionalInsurance.name }}</td>
@@ -145,6 +146,12 @@
             {{ policy.additionalInsurance.premium }}
           </td>
         </tr>
+      </ng-template>
+      <ng-template pTemplate="rowexpansion" let-policy>
+        <tr colspan="15">
+          <td>labai</td>
+        </tr>
+     
       </ng-template>
     </p-table>
 
