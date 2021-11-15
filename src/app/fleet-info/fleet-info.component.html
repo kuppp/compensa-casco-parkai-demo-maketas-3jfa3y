@@ -86,11 +86,7 @@
 
               
                   <ng-template let-option pTemplate="item">
-                      <div class="p-multiselect-representative-option">
-                        
-                        
                           <span ngClass="pi {{option.image}}"></span> {{option.name}}
-                      </div>
                   </ng-template>
               </p-multiSelect>
           </ng-template>
@@ -118,7 +114,7 @@
         <tr
           class="p-selectable-row"
           [ngClass]="{ 'row-not-imported': policy.status == 0 }"
-          (click)="showMoreInfo = true;panel1=80;panel2=20;"
+          (click)="showMoreInfo = true;"
         >
 
           <td  style="max-width:30px">
