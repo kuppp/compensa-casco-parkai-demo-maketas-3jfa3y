@@ -38,3 +38,9 @@
   .plStatus2 {
     color: rgb(9, 0, 128);
   }
+
+  :host >>> .p-button {
+    background-color: rgb(0,134,65);
+    border-color: rgb(0,134,65);
+    }
+    
