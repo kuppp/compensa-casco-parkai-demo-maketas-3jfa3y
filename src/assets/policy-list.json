@@ -13,7 +13,14 @@
         "vinNo": "YARVEAHHWGZ125853",
         "manufYear": "2018",
         "value": "12000",
-        "signalLevel":"3"
+        "signalLevel":"3",
+        "mass": "1200",
+        "power": "120",
+        "seats": "5",
+        "bodyType": "Hačbekas",
+        "fuelType": "Benzinas",
+        "riskPackageName": "Bazinis",
+        "deductiblePackageName": "50 EUR / 10% VAGYSTEI"
       },
       "premium": "500",
       "additionalInsurance": {
@@ -34,13 +41,20 @@
         "vinNo": "YARVEAHHWGZ125456",
         "manufYear": "2018",
         "value": "12000",
-        "signalLevel":"3"
+        "signalLevel":"2",
+        "mass": "1230",
+        "power": "90",
+        "seats": "5",
+        "bodyType": "Hačbekas",
+        "fuelType": "Benzinas",
+        "riskPackageName": "Bazinis",
+        "deductiblePackageName": "50 EUR / 10% VAGYSTEI"
       },
       "premium": "500",
       "additionalInsurance": {
         "premium": "6",
         "name": "Vairuotojas ir keleiviai"
-      }, "error":"Polisas nutrauktas"
+      }
     },
     {
       "flag": "1", "plId": 3,
@@ -68,6 +82,7 @@
       "policy": "190 0007567",
       "beginDate": "2021-12-02",
       "endDate": "2022-11-19",
+      "cancelationDate": "2021-12-30",
       "vehicle": {
         "type": "Krovininiai automobiliai",
         "make": "MAN",

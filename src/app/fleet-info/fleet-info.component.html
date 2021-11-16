@@ -98,6 +98,7 @@
         
           <th pResizableColumn pSortableColumn="beginDate">Pradžia</th>
           <th pResizableColumn pSortableColumn="endDate">Pabaiga</th>
+          <th pResizableColumn pSortableColumn="endDate">Nutraukta</th>
           <th pResizableColumn pSortableColumn="vehicle.type">Tipas</th>
           <th pResizableColumn pSortableColumn="vehicle.make">Markė</th>
           <th pResizableColumn pSortableColumn="vehicle.model">Modelis</th>
@@ -133,6 +134,7 @@
           </td>
           <td>{{ policy.beginDate }}</td>
           <td>{{ policy.endDate }}</td>
+          <td>{{ policy.cancelationDate }}</td>
           <td>{{ policy.vehicle.type }}</td>
           <td>{{ policy.vehicle.make }}</td>
           <td>{{ policy.vehicle.model }}</td>
@@ -149,7 +151,12 @@
       </ng-template>
       <ng-template pTemplate="rowexpansion" let-policy>
         <tr colspan="15">
-          <td>labai</td>
+       
+          <td>
+            <h3 *ngIf="flag == 3">{{policy.error}}</h3>
+       
+            
+          </td>
         </tr>
      
       </ng-template>

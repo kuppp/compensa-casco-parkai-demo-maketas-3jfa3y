@@ -25,12 +25,12 @@ export interface Policy {
   policy?: string;
   beginDate?: string | Date;
   endDate?: string | Date;
+  canceationDate?: string | Date;
   vehicle?: Vehicle;
   error?: string;
   premium?: number;
   additionalInsurance?: Insurance;
   status?: string;
-  signalLevel?: number;
 }
 
 export interface Vehicle {
@@ -39,8 +39,16 @@ export interface Vehicle {
   type?: string;
   marke?: string;
   model?: string;
+  riskPackageName?: string;
+  deductiblePackageName?: string;
   manufYear?: string | Date;
   value?: number;
+  signalLevel?: number;
+  mass?: number;
+  power?: number;
+  seats?: number;
+  bodyType?: string;
+  fuelType?: string;
 }
 
 export interface Insurance {
