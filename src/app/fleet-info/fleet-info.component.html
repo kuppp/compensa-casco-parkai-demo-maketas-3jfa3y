@@ -112,8 +112,7 @@
           <th pResizableColumn pSortableColumn="beginDate">Pradžia</th>
           <th pResizableColumn pSortableColumn="endDate">Pabaiga</th>
           <th pResizableColumn pSortableColumn="vehicle.type">Tipas</th>
-          <th pResizableColumn pSortableColumn="vehicle.make">Markė</th>
-          <th pResizableColumn pSortableColumn="vehicle.model">Modelis</th>
+          <th pResizableColumn pSortableColumn="vehicle.make">Markė ir modelis</th>
           <th pResizableColumn>Valstybinis numeris</th>
           <th pResizableColumn>VIN</th>
           <th pResizableColumn>Signalizacijos lygis</th>
@@ -158,8 +157,7 @@
           <td><span *ngIf="!policy.cancelationDate">{{ policy.endDate }}</span><span *ngIf="policy.cancelationDate" style="color:red;"> {{ policy.cancelationDate }}</span></td>
 
           <td>{{ policy.vehicle.type }}</td>
-          <td>{{ policy.vehicle.make }}</td>
-          <td>{{ policy.vehicle.model }}</td>
+          <td>{{ policy.vehicle.make }} {{ policy.vehicle.model }}</td>
           <td>{{ policy.vehicle.plateNo }}</td>
           <td>{{ policy.vehicle.vinNo }}</td>
           <td>{{ policy.vehicle.signalLevel }}</td>
@@ -171,10 +169,50 @@
           </td>
         </tr>
       </ng-template>
+
       <ng-template pTemplate="rowexpansion" let-policy>
-        <tr colspan="14">
-          <td>
-            <h4 *ngIf="policy.flag == 1">{{ policy.error }}</h4>
+        <tr >
+     
+          <td colspan="14">
+          <div class="p-p-3">
+
+          <table class="p-datatable-gridline"> 
+          <tr><th style="background-color:#f1f1f1;padding:3px">Transporto priemonė</th>
+            <th style="background-color:#f1f1f1;padding:3px">Susiję asmenys</th>
+            <th style="background-color:#f1f1f1;padding:3px">Finansiniai duomenys</th></tr>
+             <tr>
+           
+           <td>
+           
+          <table>
+            <tr>
+              <td><label for="vehicleType">Transporto priemonės tipas</label></td>
+              <td><label style="font-weight:800;">{{policy.vehicle.type}}</label> </td>
+            </tr>
+            <tr>
+            <td><label for="MakeModel">Markė ir modelis</label></td>
+             <td><label style="font-weight:800;">{{policy.vehicle.make}} {{policy.vehicle.make}}</label> </td>
+          </tr>
+          <tr>
+          <td><label for="MakeModel">Valstybinis numeris</label></td>
+           <td><label style="font-weight:800;">{{policy.vehicle.plateNo}}</label> </td>
+        </tr>
+        <tr>
+        <td><label for="MakeModel">VIN numeris</label></td>
+         <td><label style="font-weight:800;">{{policy.vehicle.vinNo}}</label> </td>
+      </tr>
+
+          </table>
+   
+           
+       </td>
+       <td>MOKĖTOJAS, NAUDOS GAVĖJAS</td>
+         <td>Mokėjimo grafikas, sąskaita, apmokėjimai</td>
+     </tr>
+   </table>
+
+
+  </div>
           </td>
         </tr>
       </ng-template>

@@ -1,46 +1,12 @@
-:host >>> table td, th {
-  font-size:0.8em;
-  margin: 2px;
-  padding: 0px;
-  border-collapse: collapse;
- 
-  }
-
-
-
-:host ::ng-deep .p-datatable .p-datatable-tbody > tr > td {
-  border: 1px solid #f1f1f1;
-  padding: 2px;
- 
-}
-:host ::ng-deep  .p-datatable-thead > tr > th {
-  white-space: normal;
-  padding: 2px;
- margin: 2px;
+.plStatus1 {
+  color: red;
+  font-weight: 800;
 }
 
+.plStatus0 {
+  color: green;
+}
 
-:host >>> label, input {
-  font-size:12px;
-  font-weight: 600;
-  padding: 3px;
-  }
-
-  .plStatus1 {
-    color: red;
-    font-weight: 800;
-  }
-
-  .plStatus0 {
-    color: green;
-  }
-
-  .plStatus2 {
-    color: rgb(9, 0, 128);
-  }
-
-  :host >>> .p-button {
-    background-color: rgb(0,134,65);
-    border-color: rgb(0,134,65);
-    }
-    
+.plStatus2 {
+  color: rgb(9, 0, 128);
+}
