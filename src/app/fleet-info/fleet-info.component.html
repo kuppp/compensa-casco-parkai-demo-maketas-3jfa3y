@@ -115,21 +115,21 @@
               </ng-template>
             </p-columnFilter>
           </th>
-          <th pResizableColumn pSortableColumn="policy">Poliso numeris</th>
+          <th pResizableColumn pSortableColumn="policy" style=" white-space: pre-wrap;">Poliso numeris</th>
 
           <th pResizableColumn pSortableColumn="beginDate">Pradžia</th>
           <th pResizableColumn pSortableColumn="endDate">Pabaiga</th>
           <th pResizableColumn pSortableColumn="vehicle.type">Tipas</th>
-          <th pResizableColumn pSortableColumn="vehicle.make">Markė ir modelis</th>
-          <th pResizableColumn>Valstybinis numeris</th>
+          <th pResizableColumn pSortableColumn="vehicle.make" style=" white-space: pre-wrap;">Markė ir modelis</th>
+          <th pResizableColumn style=" white-space: pre-wrap;">Valstybinis numeris</th>
           <th pResizableColumn>VIN</th>
-          <th pResizableColumn>Signalizacijos lygis</th>
+          <th pResizableColumn style=" white-space: pre-wrap;">Signalizacijos lygis</th>
           <th pResizableColumn>Vertė</th>
           <th pResizableColumn>Įmoka</th>
-          <th pResizableColumn pSortableColumn="additionalInsurance.name">
+          <th pResizableColumn pSortableColumn="additionalInsurance.name" style=" white-space: pre-wrap;">
             Papildomi dr.
           </th>
-          <th pResizableColumn>Papild. dr. įmoka</th>
+          <th pResizableColumn style=" white-space: pre-wrap;">Papild. dr. įmoka</th>
         </tr>
       </ng-template>
 
@@ -184,8 +184,9 @@
           <td colspan="14">
           <div class="p-p-3">
 
-          <table class="p-datatable-gridline"> 
-          <tr><th style="background-color:#f1f1f1;padding:3px">Transporto priemonė</th>
+          <table class="p-datatable-gridline" style="width:100%"> 
+          <tr>
+            <th style="background-color:#f1f1f1;padding:3px;width:50%">Transporto priemonė</th>
       
             <th style="background-color:#f1f1f1;padding:3px">Finansiniai duomenys</th></tr>
              <tr>
@@ -271,6 +272,13 @@
                <td>{{ Schedule.paidSum }}</td>
              </tr>
            </ng-template>
+           <ng-template pTemplate="summary">
+           <div class="p-d-flex p-ai-center p-jc-between">
+               Skola datai: xx EUR<br>
+               <span >Nutraukimo data: {{policy.cancelationDate}}</span>
+           </div>
+       </ng-template>
+
          </p-table>
         
         
