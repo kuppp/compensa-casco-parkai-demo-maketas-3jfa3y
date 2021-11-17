@@ -26,7 +26,13 @@
       "additionalInsurance": {
         "premium": "12",
         "name": "Išplėstinė Pagalba, Vairuotojas ir keleiviai"
-      }
+      },
+      "schedule": [
+          {"date": "2022-01-01", "paymentSum": "125.00", "paidSum": "15.00"},
+          {"date": "2022-04-01", "paymentSum": "125.00", "paidSum": "0.00"},
+          {"date": "2022-08-01", "paymentSum": "125.00", "paidSum": "0.00"},
+          {"date": "2022-12-01", "paymentSum": "125.00", "paidSum": "0.00"}
+    ]
     },
     {
       "flag": "2", "plId": 2,
@@ -54,7 +60,13 @@
       "additionalInsurance": {
         "premium": "6",
         "name": "Vairuotojas ir keleiviai"
-      }
+      },
+      "schedule": [
+        {"date": "2022-01-01", "paymentSum": "125.00", "paidSum": "15.00"},
+        {"date": "2022-04-01", "paymentSum": "125.00", "paidSum": "0.00"},
+        {"date": "2022-08-01", "paymentSum": "125.00", "paidSum": "0.00"},
+        {"date": "2022-12-01", "paymentSum": "125.00", "paidSum": "0.00"}
+  ]
     },
     {
       "flag": "1", "plId": 3,
@@ -97,7 +109,12 @@
       "additionalInsurance": {
         "premium": "6",
         "name": "Vairuotojas ir keleiviai"
-      }
+      },      "schedule": [
+        {"date": "2022-01-01", "paymentSum": "125.00", "paidSum": "125.00"},
+        {"date": "2022-04-01", "paymentSum": "125.00", "paidSum": "0.00"},
+        {"date": "2022-08-01", "paymentSum": "125.00", "paidSum": "0.00"},
+        {"date": "2022-12-01", "paymentSum": "125.00", "paidSum": "0.00"}
+  ]
     },
     {
       "flag": "0", "plId": 5,
@@ -118,7 +135,13 @@
       "additionalInsurance": {
         "premium": "6",
         "name": "Vairuotojas ir keleiviai"
-      }
+      },
+      "schedule": [
+        {"date": "2022-01-01", "paymentSum": "125.00", "paidSum": "125.00"},
+        {"date": "2022-04-01", "paymentSum": "125.00", "paidSum": "0.00"},
+        {"date": "2022-08-01", "paymentSum": "125.00", "paidSum": "0.00"},
+        {"date": "2022-12-01", "paymentSum": "125.00", "paidSum": "0.00"}
+  ]
     },
     {
       "flag": "2", "plId": 6,
@@ -180,7 +203,13 @@
       "additionalInsurance": {
         "premium": "",
         "name": "Išplėstinė Pagalba, Vairuotojas ir keleiviai"
-      }
+      },
+      "schedule": [
+        {"date": "2022-01-01", "paymentSum": "125.00", "paidSum": "15.00"},
+        {"date": "2022-04-01", "paymentSum": "125.00", "paidSum": "0.00"},
+        {"date": "2022-08-01", "paymentSum": "125.00", "paidSum": "0.00"},
+        {"date": "2022-12-01", "paymentSum": "125.00", "paidSum": "0.00"}
+  ]
     },
     {
       "flag": "-1",

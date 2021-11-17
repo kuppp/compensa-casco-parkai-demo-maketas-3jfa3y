@@ -19,6 +19,14 @@
             styleClass="p-button-primary p-mb-2 p-m-2  btn"
           ></p-button>
 
+          <p-button
+          label="Generuoti"
+          icon="pi pi-spinner"
+          iconPos="left"
+          styleClass="p-button-primary p-mb-2 p-m-2  btn"
+        ></p-button>
+
+
           <p-splitButton
             label="Pažymėtiems"
             icon="pi pi-ellipsis-v"
@@ -178,7 +186,7 @@
 
           <table class="p-datatable-gridline"> 
           <tr><th style="background-color:#f1f1f1;padding:3px">Transporto priemonė</th>
-            <th style="background-color:#f1f1f1;padding:3px">Susiję asmenys</th>
+      
             <th style="background-color:#f1f1f1;padding:3px">Finansiniai duomenys</th></tr>
              <tr>
            
@@ -187,27 +195,86 @@
           <table>
             <tr>
               <td><label for="vehicleType">Transporto priemonės tipas</label></td>
-              <td><label style="font-weight:800;">{{policy.vehicle.type}}</label> </td>
+              <td><label style="font-weight:500;">{{policy.vehicle.type}}</label> </td>
             </tr>
             <tr>
             <td><label for="MakeModel">Markė ir modelis</label></td>
-             <td><label style="font-weight:800;">{{policy.vehicle.make}} {{policy.vehicle.make}}</label> </td>
+             <td><label style="font-weight:500;">{{policy.vehicle.make}} {{policy.vehicle.make}}</label> </td>
           </tr>
           <tr>
           <td><label for="MakeModel">Valstybinis numeris</label></td>
-           <td><label style="font-weight:800;">{{policy.vehicle.plateNo}}</label> </td>
+           <td><label style="font-weight:500;">{{policy.vehicle.plateNo}}</label> </td>
         </tr>
         <tr>
         <td><label for="MakeModel">VIN numeris</label></td>
-         <td><label style="font-weight:800;">{{policy.vehicle.vinNo}}</label> </td>
+         <td><label style="font-weight:500;">{{policy.vehicle.vinNo}}</label> </td>
       </tr>
+      <tr>
+      <td><label for="MakeModel">Gamybos metai</label></td>
+      <td><label style="font-weight:500;">{{policy.vehicle.manufYear}} m.</label> </td>
+   </tr>
+   <tr>
+   <td><label for="MakeModel">Masė</label></td>
+   <td><label style="font-weight:500;">{{policy.vehicle.mass}} kg.</label> </td>
+</tr>
+<tr>
+<td><label for="MakeModel">Galia</label></td>
+<td><label style="font-weight:500;">{{policy.vehicle.power}} kW</label> </td>
+</tr>
+<tr>
+<td><label for="MakeModel">Kėbulas</label></td>
+<td><label style="font-weight:500;">{{policy.vehicle.bodyType}}</label> </td>
+</tr>
+<tr>
+<td><label for="MakeModel">Kuro tipas</label></td>
+<td><label style="font-weight:500;">{{policy.vehicle.fuelType}}</label> </td>
+</tr>
+
+<tr>
+<td><label for="MakeModel">Draudimo variantas</label></td>
+<td><label style="font-weight:500;">{{policy.vehicle.riskPackageName}}</label> </td>
+</tr>
+<tr>
+<td><label for="MakeModel">Išskaita</label></td>
+<td><label style="font-weight:500;">{{policy.vehicle.deductiblePackageName}}</label> </td>
+</tr>
+
+
 
           </table>
    
            
        </td>
-       <td>MOKĖTOJAS, NAUDOS GAVĖJAS</td>
-         <td>Mokėjimo grafikas, sąskaita, apmokėjimai</td>
+      
+         <td>
+        
+      
+         <p-table
+           [rowHover]="true"
+           [value]="policy.schedule"
+           styleClass="p-datatable-sm"
+         >
+           <ng-template pTemplate="header">
+             <tr>
+               <th pSortableColumn="Nr" style="max-width: 120px">Data</th>
+               <th pSortableColumn="status">Mokėtina suma</th>
+               <th pSortableColumn="status">Apmokėta suma</th>
+             </tr>
+           </ng-template>
+     
+           <ng-template pTemplate="body" let-Schedule>
+             <tr>
+               <td style="max-width: 120px">
+                 <span>{{ Schedule.date }}</span>
+               </td>
+               <td>{{ Schedule.paymentSum }}</td>
+               <td>{{ Schedule.paidSum }}</td>
+             </tr>
+           </ng-template>
+         </p-table>
+        
+        
+        </td>
      </tr>
    </table>
 

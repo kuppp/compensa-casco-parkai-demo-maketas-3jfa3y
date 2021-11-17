@@ -18,6 +18,8 @@ export class PolicyListService {
 export interface Schedule {
   number?: number;
   date?: string | Date;
+  paymentSum?: number;
+  paidSum?: number;
 }
 export interface Policy {
   flag?: number;
@@ -31,6 +33,7 @@ export interface Policy {
   premium?: number;
   additionalInsurance?: Insurance;
   status?: string;
+  schedule: Schedule;
 }
 
 export interface Vehicle {
