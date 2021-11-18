@@ -34,6 +34,8 @@ import {SplitterModule} from 'primeng/splitter';
 import { Variables } from './global-variables';
 import {MenuModule} from 'primeng/menu';
 import {TooltipModule} from 'primeng/tooltip';
+import {InputTextareaModule} from 'primeng/inputtextarea';
+
 
 @NgModule({
   imports: [
@@ -55,7 +57,7 @@ import {TooltipModule} from 'primeng/tooltip';
     ToggleButtonModule,
     DividerModule,
     BadgeModule,  MenubarModule,
-    TagModule, SplitButtonModule, ToolbarModule, TabViewModule,SplitterModule,MenuModule,TooltipModule,
+    TagModule, SplitButtonModule, ToolbarModule, TabViewModule,SplitterModule,MenuModule,TooltipModule,InputTextareaModule,
     RouterModule.forRoot([
       {path:'',component: AppComponent}
 

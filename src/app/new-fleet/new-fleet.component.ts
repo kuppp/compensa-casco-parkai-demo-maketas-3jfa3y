@@ -36,6 +36,12 @@ this.paymentSchedule = [
 ]
   }
 
-  
+
+  display: boolean = false;
+
+    showDialogCRM() {
+        this.display = true;
+    }
 
 }
+

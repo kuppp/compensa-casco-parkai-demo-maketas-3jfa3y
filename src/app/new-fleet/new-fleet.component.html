@@ -1,3 +1,20 @@
+<p-dialog header="Title" [(visible)]="display">
+<ng-template pTemplate="header">
+Patvirtinti nestandartines sąlygas
+</ng-template>
+
+<div class="p-fluid p-formgrid p-grid">
+<div class="p-field p-col-12">
+    <label for="address">Pastabos</label>
+    <textarea id="address" type="text" rows="4" pInputTextarea></textarea>
+</div>
+</div>
+
+<ng-template pTemplate="footer">
+//buttons
+</ng-template>
+</p-dialog>
+
 <p-tabView [(activeIndex)]="index">
   <p-tabPanel header="Parko duomenys">
     <div class="p-fluid">
@@ -76,7 +93,7 @@
           <p-button
             label="Toliau"
             icon="pi pi-arrow-circle-right"
-            iconPos="right"
+            iconPos="left"
             styleClass="p-button-primary p-mb-2 p-m-2 p-p-2 btn"
             (click)=" newTabConditions = true; this.index = 1;"
           ></p-button>
@@ -89,6 +106,7 @@
 
   <p-tabPanel header="Draudimo sąlygos" >
     <h3>Standartinės draudimo sąlygos</h3>
+    <p>Norint sudetinti kitas sąlygas, perduokite parko draudimą rizikos vertintojui.</p>
     <p-table
       [value]="parkConditions"
       sortField="insType"
@@ -138,10 +156,20 @@
         <p-button
           label="Toliau"
           icon="pi pi-arrow-circle-right"
-          iconPos="right"
+          iconPos="left"
           styleClass="p-button-primary p-mb-2 p-mr-2 btn"
           (click)="newPaymentSchedule = true; this.index = 2"
         ></p-button>
+
+      
+        <p-button
+          label="Perduoti suderinimui"
+          icon="pi pi-reply"
+          iconPos="left"
+          styleClass="p-button-primary p-mb-2 p-mr-2 btn"
+          (click)="showDialogCRM()"
+        ></p-button>
+
       </div>
     </p-toolbar>
   </p-tabPanel>
@@ -201,7 +229,7 @@
       <p-button
         label="Išsaugoti ir tęsti"
         icon="pi pi-save"
-        iconPos="right"
+        iconPos="left"
         styleClass="p-button-primary p-mb-2 p-mr-2 btn"
         (click)="newEmptyPark = true; this.index = 3"
       ></p-button>
@@ -212,6 +240,52 @@
   <p-tabPanel header="Parkas" >
   <h3><b>UAB TRANSPORTO ĮMONĖ</b> parko draudimas</h3> 
   <h5>Nr: PARK 00000002</h5>
+  
+<div class="card right">
+  <p-toolbar>
+    
+  <div class="p-toolbar-group-left">
+    <p-button
+      label="Įtraukti naują"
+      icon="pi pi-plus"
+      iconPos="left"
+      styleClass="p-button-primary p-mb-2 p-m-2 btn"
+    ></p-button>
+    <p-button
+      label="Importuoti"
+      icon="pi pi-arrow-circle-down"
+      iconPos="left" (click)="ImportTab = true;" 
+      styleClass="p-button-disabled p-mb-2 p-m-2  btn"
+    ></p-button>
+
+    <p-button
+    label="Generuoti"
+    icon="pi pi-spinner"
+    iconPos="left" disabled
+    styleClass="p-button-primary p-mb-2 p-m-2  btn"
+  ></p-button>
+
+
+    <p-splitButton
+      label="Pažymėtiems"
+      icon="pi pi-ellipsis-v"
+      (onClick)="save()" diabled
+      [model]="actionMenuItems"
+      styleClass="p-button-primary  p-mr-2 btn"
+    >
+    </p-splitButton>
+    <p-splitButton
+      label="Spausdinti"
+      icon="pi "
+      (onClick)="save()"
+      [model]="printMenuItems"
+      styleClass="p-button-primary  p-mr-2 btn"
+    >
+    </p-splitButton>
+  </div>
+</p-toolbar>
+</div>
+
   <p-table
   [value]="policies"
   [scrollable]="true"
@@ -291,38 +365,8 @@
   </ng-template>
 </p-table>
 
-<div class="card right">
-<p-toolbar>
-  <div class="p-toolbar-group-left">
-    <p-button
-      label="Įtraukti naują"
-      icon="pi pi-plus"
-      iconPos="left"
-      styleClass="p-button-primary p-mb-2 p-mr-2 btn"
-    ></p-button>
-    
-    <p-button
-      label="Importuoti"
-      icon="pi pi-arrow-circle-down"
-      iconPos="left"
-      styleClass="p-button-primary p-mb-2 p-mr-2 btn"
-    ></p-button>
- 
 
-</div>
 
-  <div class="p-toolbar-group-right">
-    <p-splitButton
-      label="Spausdinti"
-      icon="pi pi-file-pdf"
-      (onClick)="save()"
-      [model]="printMenuItems"
-      styleClass="p-button-secondary p-mb-2 p-mr-2 btn"
-    >
-    </p-splitButton>
-  </div>
-</p-toolbar>
-</div>
 
   </p-tabPanel>
 
