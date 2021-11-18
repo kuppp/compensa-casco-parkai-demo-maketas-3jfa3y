@@ -180,11 +180,18 @@
 
       <ng-template pTemplate="rowexpansion" let-policy>
         <tr >
-     
-          <td colspan="14">
+         
+          <td>
           <div class="p-p-3">
 
           <table class="p-datatable-gridline" style="width:100%"> 
+        
+            <tr *ngIf="policy.error" >
+          <td colspan="2" style="background-color:#f1f1f1;padding:5px;margin:5px">
+          <span style="color:red;">{{policy.error}}</span>
+          </td>
+        </tr>
+
           <tr>
             <th style="background-color:#f1f1f1;padding:3px;width:50%">Transporto priemonė</th>
       
@@ -248,7 +255,18 @@
        </td>
       
          <td>
-        
+        <table>
+          <tr>
+          <tr>
+          <td><label for="MakeModel">Pasirašyta įmoka</label></td>
+          <td><label style="font-weight:500;">{{policy.premium}} EUR</label> </td>
+          </tr>
+          <tr>
+          <td><label for="MakeModel">Papildomi draudimai</label></td>
+          <td><label style="font-weight:500;">{{policy.additionalInsurance.premium  }} EUR</label> </td>
+          </tr>
+          <tr>
+            <td colspan="2">
       
          <p-table
            [rowHover]="true"
@@ -274,16 +292,20 @@
            </ng-template>
            <ng-template pTemplate="summary">
            <div class="p-d-flex p-ai-center p-jc-between">
-               Skola datai: xx EUR<br>
-               <span >Nutraukimo data: {{policy.cancelationDate}}</span>
+               Bendra įmoka: {{ sum(policy.premium ,policy.additionalInsurance.premium)  }} EUR<br>
+               Skola datai: 0 EUR<br>
+               <span *ngIf="policy.cancelationDate">Nutraukimo data: {{policy.cancelationDate}}</span>
            </div>
        </ng-template>
 
          </p-table>
-        
+        </td>
+      </tr>
+        </table>
         
         </td>
      </tr>
+    
    </table>
 
 

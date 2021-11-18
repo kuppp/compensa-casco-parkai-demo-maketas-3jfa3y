@@ -87,7 +87,13 @@
       "additionalInsurance": {
         "premium": "6",
         "name": "Vairuotojas ir keleiviai"
-      }, "error":"Validatoriaus ribojimai"
+      }, "error":"Validatoriaus ribojimai",
+      "schedule": [
+        {"date": "2022-01-01", "paymentSum": "1125.00", "paidSum": "1125.00"},
+        {"date": "2022-04-01", "paymentSum": "1125.00", "paidSum": "0.00"},
+        {"date": "2022-08-01", "paymentSum": "1125.00", "paidSum": "0.00"},
+        {"date": "2022-12-01", "paymentSum": "1125.00", "paidSum": "0.00"}
+  ]
     },
     {
       "flag": "0", "plId": 4,
@@ -110,10 +116,10 @@
         "premium": "6",
         "name": "Vairuotojas ir keleiviai"
       },      "schedule": [
-        {"date": "2022-01-01", "paymentSum": "125.00", "paidSum": "125.00"},
-        {"date": "2022-04-01", "paymentSum": "125.00", "paidSum": "0.00"},
-        {"date": "2022-08-01", "paymentSum": "125.00", "paidSum": "0.00"},
-        {"date": "2022-12-01", "paymentSum": "125.00", "paidSum": "0.00"}
+        {"date": "2022-01-01", "paymentSum": "1125.00", "paidSum": "1125.00"},
+        {"date": "2022-04-01", "paymentSum": "1125.00", "paidSum": "0.00"},
+        {"date": "2022-08-01", "paymentSum": "1125.00", "paidSum": "0.00"},
+        {"date": "2022-12-01", "paymentSum": "1125.00", "paidSum": "0.00"}
   ]
     },
     {
@@ -137,10 +143,10 @@
         "name": "Vairuotojas ir keleiviai"
       },
       "schedule": [
-        {"date": "2022-01-01", "paymentSum": "125.00", "paidSum": "125.00"},
-        {"date": "2022-04-01", "paymentSum": "125.00", "paidSum": "0.00"},
-        {"date": "2022-08-01", "paymentSum": "125.00", "paidSum": "0.00"},
-        {"date": "2022-12-01", "paymentSum": "125.00", "paidSum": "0.00"}
+        {"date": "2022-01-01", "paymentSum": "1125.00", "paidSum": "0.00"},
+        {"date": "2022-04-01", "paymentSum": "1125.00", "paidSum": "0.00"},
+        {"date": "2022-08-01", "paymentSum": "1125.00", "paidSum": "0.00"},
+        {"date": "2022-12-01", "paymentSum": "1125.00", "paidSum": "0.00"}
   ]
     },
     {
@@ -158,7 +164,13 @@
         "value": "5000",
         "signalLevel":"3"
       }, "additionalInsurance": {},
-      "premium": "4300", "status":"2"
+      "premium": "4000", "status":"2",
+      "schedule": [
+        {"date": "2022-01-01", "paymentSum": "1000.00", "paidSum": "1000.00"},
+        {"date": "2022-04-01", "paymentSum": "1000.00", "paidSum": "0.00"},
+        {"date": "2022-08-01", "paymentSum": "1000.00", "paidSum": "0.00"},
+        {"date": "2022-12-01", "paymentSum": "1000.00", "paidSum": "0.00"}
+  ]
     },
 
     {
