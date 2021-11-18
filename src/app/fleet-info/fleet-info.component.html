@@ -15,7 +15,7 @@
           <p-button
             label="Importuoti"
             icon="pi pi-arrow-circle-down"
-            iconPos="left"
+            iconPos="left" (click)="ImportTab = true;"
             styleClass="p-button-primary p-mb-2 p-m-2  btn"
           ></p-button>
 
@@ -37,7 +37,7 @@
           </p-splitButton>
           <p-splitButton
             label="Spausdinti"
-            icon="pi pi-file-pdf"
+            icon="pi "
             (onClick)="save()"
             [model]="printMenuItems"
             styleClass="p-button-primary  p-mr-2 btn"
@@ -46,6 +46,28 @@
         </div>
       </p-toolbar>
     </div>
+
+    <div class="card right" *ngIf="ImportTab">
+    <p-toolbar>
+      <div class="p-toolbar-group-left">
+  
+      <p-button
+        label="Atsisiųsti šabloną"
+        icon="pi pi-file-excel"
+        iconPos="left"
+        styleClass="p-button-primary p-mb-2 p-m-2  btn"
+      ></p-button>
+
+        <p-button
+          label="Įkelti failą"
+          icon="pi pi-paperclip"
+          iconPos="left"
+          styleClass="p-button-primary p-mb-2 p-m-2  btn"
+        ></p-button>
+
+      </div>
+    </p-toolbar>
+  </div>
 
     <p-table
       [value]="policies"
