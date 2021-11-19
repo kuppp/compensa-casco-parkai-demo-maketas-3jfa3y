@@ -15,6 +15,17 @@ export class PolicyListService {
       });
   }
 }
+export interface Fleet {
+  issueDate: string | Date;
+  startDate: string |Date;
+  endDate: string | Date;
+  number: string;
+  policyholder: string;
+  policyholderCode: string;
+  numberOfObjects: number;
+  numberOfCurrentObjects: number;
+
+}
 export interface Schedule {
   number?: number;
   date?: string | Date;

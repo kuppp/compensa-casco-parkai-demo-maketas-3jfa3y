@@ -10,20 +10,20 @@
             label="Įtraukti naują"
             icon="pi pi-plus"
             iconPos="left"
-            styleClass="p-button-primary p-mb-2 p-m-2 btn"
+            styleClass="p-button-success p-button-outlined p-mb-2 p-m-2 btn"
           ></p-button>
           <p-button
             label="Importuoti"
             icon="pi pi-arrow-circle-down"
             iconPos="left" (click)="ImportTab = true;"
-            styleClass="p-button-primary p-mb-2 p-m-2  btn"
+            styleClass="p-button-success p-button-outlined p-mb-2 p-m-2  btn"
           ></p-button>
 
           <p-button
           label="Generuoti"
           icon="pi pi-spinner"
           iconPos="left"
-          styleClass="p-button-primary p-mb-2 p-m-2  btn"
+          styleClass="p-button-success p-button-outlined p-mb-2 p-m-2  btn"
         ></p-button>
 
 
@@ -32,7 +32,7 @@
             icon="pi pi-ellipsis-v"
             (onClick)="save()"
             [model]="actionMenuItems"
-            styleClass="p-button-primary  p-mr-2 btn"
+            styleClass="p-button-outlined  p-mr-2 btn"
           >
           </p-splitButton>
           <p-splitButton
@@ -40,7 +40,7 @@
             icon="pi "
             (onClick)="save()"
             [model]="printMenuItems"
-            styleClass="p-button-primary  p-mr-2 btn"
+            styleClass="p-button-outlined  p-mr-2 btn"
           >
           </p-splitButton>
         </div>

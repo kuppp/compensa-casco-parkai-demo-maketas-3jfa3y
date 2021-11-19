@@ -1,5 +1,17 @@
 
-:host >>> .p-button {
+:host >>> .btn {
   background-color: rgb(0,134,65);
   border-color: rgb(0,134,65);
   }
+
+  
+:host >>> .p-button-success {
+  border-color: rgb(0,134,65);
+  }
+
+
+  :host >>> .p-button.p-button-success.p-button-outlined {
+    border-color: rgb(0,134,65);
+  
+    }
+  

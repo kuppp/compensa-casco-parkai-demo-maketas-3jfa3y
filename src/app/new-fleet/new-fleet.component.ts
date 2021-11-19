@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PolicyListService, Policy, Schedule, Condition } from '../policyservice';
+import {MenuItem} from 'primeng/api';
 
 @Component({
   selector: 'app-new-fleet',
@@ -13,7 +14,7 @@ export class NewFleetComponent implements OnInit {
   newTabIndex : number = 0;
   parkConditions: Condition[];
   paymentSchedule: Schedule[];
-
+  printMenuItems: MenuItem[];
   ngOnInit() {
 
     this.parkConditions = [
@@ -34,6 +35,10 @@ export class NewFleetComponent implements OnInit {
 this.paymentSchedule = [
   {"number":1, "date":'2022-01-01'}, {number:2, date:'2022-04-01'}, {number:3, date:'2022-08-01'},{number:4, date:'2022-12-01'}
 ]
+this.printMenuItems = [
+  {label: 'Generalinės sutarties projektas', icon: 'pi pi-file-pdf'}
+];
+
   }
 
 
