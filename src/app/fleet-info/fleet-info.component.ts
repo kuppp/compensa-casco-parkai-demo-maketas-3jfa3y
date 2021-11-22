@@ -29,15 +29,14 @@ export class FleetInfoComponent implements OnInit {
  this.printMenuItems = [
       {label: 'Generalinė sutartis', icon: 'pi pi-file-pdf'},
       {label: 'Priedas', icon: 'pi pi-file-pdf'},
-      {separator: true},
-      {label: 'Eksportuoti', icon: 'pi pi-file-excel', routerLink: ['/setup']},
-      {label: 'Siųsti el.paštu', icon: 'pi pi-send', routerLink: ['/setup']}
+      {label: 'Sąskaita', icon: 'pi pi-file-pdf'}
   ];
 
   this.actionMenuItems = [
-      {label: 'Nutraukti', icon: 'pi pi-pencil'},
+      {label: 'Sugadinti', icon: 'pi pi-times'},
       {label: 'Pašalinti iš parko', icon: 'pi pi-minus-circle'},
-      {separator: true}
+      {separator: true},
+      {label: 'Generuoti sutartis', icon: 'pi pi-spinner'},
   ];
 
   this.paymentSchedule = [

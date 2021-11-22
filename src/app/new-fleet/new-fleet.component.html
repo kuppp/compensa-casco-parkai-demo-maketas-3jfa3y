@@ -86,6 +86,36 @@ Patvirtinti nestandartines sąlygas
         </div>
         <div class="p-col-6 p-md-10"></div>
       </div>
+
+      <div class="p-field p-grid">
+      <label for="lastname4" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0"
+        >Komisiniai:</label
+      >
+
+      <div class="p-col-12 p-md-10">
+      <table style="width:400px">
+        <tr style="text-align:left"> 
+          <th style="border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1">Rūšis</th>
+          <th style="border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1">Tarifas</th>
+        </tr>
+        <tr>
+          <td style="border:1px solid #f1f1f1;padding:3px">CASCO parkai transporto draudimas</td>
+          <td style="border:1px solid #f1f1f1;padding:3px">0.02</td>
+        </tr>
+        <tr>
+        <td style="border:1px solid #f1f1f1;padding:3px">CASCO parkai Vairuotojas ir keleiviai</td>
+        <td style="border:1px solid #f1f1f1;padding:3px">0.02</td>
+      </tr>
+      <tr>
+      <td style="border:1px solid #f1f1f1;padding:3px">CASCO parkai pagalba kelyje</td>
+      <td style="border:1px solid #f1f1f1;padding:3px">0.00</td>
+    </tr>
+      </table>
+      </div>
+      <div class="p-col-6 p-md-10"></div>
+    </div>
+
+      
       <br />
 
       <p-toolbar>
@@ -249,20 +279,20 @@ Patvirtinti nestandartines sąlygas
       label="Įtraukti naują"
       icon="pi pi-plus"
       iconPos="left"
-      styleClass="p-button-primary p-mb-2 p-m-2 btn"
+      styleClass="p-button-success p-button-outlined  p-mb-2 p-m-2 btn"
     ></p-button>
     <p-button
       label="Importuoti"
       icon="pi pi-arrow-circle-down"
       iconPos="left" (click)="ImportTab = true;" 
-      styleClass="p-button-disabled p-mb-2 p-m-2  btn"
+      styleClass="p-button-success p-button-outlined  p-mb-2 p-m-2  btn"
     ></p-button>
 
     <p-button
     label="Generuoti"
     icon="pi pi-spinner"
     iconPos="left" disabled
-    styleClass="p-button-primary p-mb-2 p-m-2  btn"
+    styleClass="p-button-success p-button-outlined  p-mb-2 p-m-2  btn"
   ></p-button>
 
 

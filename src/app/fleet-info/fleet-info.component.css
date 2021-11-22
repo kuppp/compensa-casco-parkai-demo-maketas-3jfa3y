@@ -11,3 +11,18 @@
   color: rgb(9, 0, 128);
 }
 
+:host >>> .p-button {
+  border-color: rgb(0,134,65);
+  color: rgb(0,134,65);
+  background-color:#f1f1f1;
+  }
+
+
+
+  
+:host >>> .p-button.p-button-success.p-button-outlined {
+  border-color: rgb(0,134,65);
+  color: rgb(0,134,65);
+  background-color:#f1f1f1;
+  }
+
