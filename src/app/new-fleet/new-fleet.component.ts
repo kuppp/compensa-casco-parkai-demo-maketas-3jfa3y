@@ -42,11 +42,14 @@ this.printMenuItems = [
   }
 
 
-  display: boolean = false;
+  displayCRM: boolean = false;
+ 
 
     showDialogCRM() {
-        this.display = true;
+        this.displayCRM = true;
     }
+
+
 
 }
 

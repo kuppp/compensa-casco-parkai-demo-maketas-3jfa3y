@@ -1,4 +1,4 @@
-<p-dialog header="Title" [(visible)]="display">
+<p-dialog header="Title" [(visible)]="displayCRM">
 <ng-template pTemplate="header">
 Patvirtinti nestandartines sąlygas
 </ng-template>
@@ -11,9 +11,18 @@ Patvirtinti nestandartines sąlygas
 </div>
 
 <ng-template pTemplate="footer">
-//buttons
+<p-button
+label="Perduoti suderinimui"
+icon="pi pi-reply"
+iconPos="left"
+styleClass="p-button-primary p-mb-2 p-mr-2 btn"
+(click)="hideDialogCRM()"
+></p-button>
 </ng-template>
 </p-dialog>
+
+
+
 
 <p-tabView [(activeIndex)]="index">
   <p-tabPanel header="Parko duomenys">
@@ -148,8 +157,8 @@ Patvirtinti nestandartines sąlygas
       <ng-template pTemplate="header">
         <tr>
           <th style="width:240px">Draudimo tipas</th>
-          <th style="width:100px">Amžius nuo [</th>
-          <th style="width:100px">Amžius iki )</th>
+          <th style="width:120px">Amžius nuo [</th>
+          <th style="width:120px">Amžius iki )</th>
           <th style="min-width:200px">Reikšmė</th>
         </tr>
       </ng-template>
@@ -278,8 +287,7 @@ Patvirtinti nestandartines sąlygas
     <p-button
       label="Įtraukti naują"
       icon="pi pi-plus"
-      iconPos="left"
-      styleClass="p-button-success p-button-outlined  p-mb-2 p-m-2 btn"
+      iconPos="left" (click)="showDialogAddVehicles();"      styleClass="p-button-success p-button-outlined  p-mb-2 p-m-2 btn"
     ></p-button>
     <p-button
       label="Importuoti"
@@ -287,14 +295,6 @@ Patvirtinti nestandartines sąlygas
       iconPos="left" (click)="ImportTab = true;" 
       styleClass="p-button-success p-button-outlined  p-mb-2 p-m-2  btn"
     ></p-button>
-
-    <p-button
-    label="Generuoti"
-    icon="pi pi-spinner"
-    iconPos="left" disabled
-    styleClass="p-button-success p-button-outlined  p-mb-2 p-m-2  btn"
-  ></p-button>
-
 
     <p-splitButton
       label="Pažymėtiems"

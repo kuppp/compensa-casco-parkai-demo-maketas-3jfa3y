@@ -1,3 +1,79 @@
+<p-dialog header="Title" [(visible)]="displayADD" (paste)="paste($event)">
+<ng-template pTemplate="header">
+Įtraukti naujas transporto priemones
+</ng-template>
+
+<table>
+  <tr>
+    <th style="background-color:#f1f1f1;padding:3px;">Valstybinis nr.*</th>
+    <th style="background-color:#f1f1f1;padding:3px;">VIN*</th>
+    <th style="background-color:#f1f1f1;padding:3px;">Poliso pradžia*</th>
+<th style="background-color:#f1f1f1;padding:3px;">Vertė</th>
+<th style="background-color:#f1f1f1;padding:3px;">TP tipo kodas</th>
+<th style="background-color:#f1f1f1;padding:3px;">TP marke</th>
+<th style="background-color:#f1f1f1;padding:3px;">TP modelis</th>
+<th style="background-color:#f1f1f1;padding:3px;">Kriterijai</th>
+</tr>
+<tr>
+
+  <td><input type="text"></td>
+  <td><input type="text"></td>
+  <td><input type="text"></td>
+  <td><input type="text"></td>
+  <td><input type="text"></td>
+  <td><input type="text"></td>
+  <td><input type="text"></td>
+  
+  <td><input type="text"></td>
+</tr>
+<tr>
+
+
+<td><input type="text"></td>
+<td><input type="text"></td>
+<td><input type="text"></td>
+<td><input type="text"></td>
+<td><input type="text"></td>
+<td><input type="text"></td>
+<td><input type="text"></td>
+<td><input type="text"></td>
+</tr>
+<tr>
+
+
+<td><input type="text"></td>
+<td><input type="text"></td>
+<td><input type="text"></td>
+<td><input type="text"></td>
+<td><input type="text"></td>
+<td><input type="text"></td>
+<td><input type="text"></td>
+<td><input type="text"></td>
+</tr>
+<tr>
+
+
+<td><input type="text"></td>
+<td><input type="text"></td>
+<td><input type="text"></td>
+<td><input type="text"></td>
+<td><input type="text"></td>
+<td><input type="text"></td>
+<td><input type="text"></td>
+<td><input type="text"></td>
+</tr>
+</table>
+
+<ng-template pTemplate="footer">
+<p-button
+label="įtraukti"
+icon="pi pi-plus"
+iconPos="left"
+styleClass="p-button-primary p-mb-2 p-mr-2 btn"
+></p-button>
+</ng-template>
+</p-dialog>
+
 <p-tabView>
   <p-tabPanel header="Parkas">
     <h3><b>UAB TRANSPORTO ĮMONĖ</b> parko draudimas</h3>
@@ -9,23 +85,16 @@
           <p-button
             label="Įtraukti naują"
             icon="pi pi-plus"
-            iconPos="left"
+            iconPos="left" (click)="showDialogAddVehicles();"
             styleClass="p-button-success p-button-outlined p-mb-2 p-m-2 btn"
           ></p-button>
           <p-button
             label="Importuoti"
             icon="pi pi-arrow-circle-down"
-            iconPos="left" (click)="ImportTab = true;"
+            iconPos="left"
+            (click)="ImportTab = true"
             styleClass="p-button-success p-button-outlined p-mb-2 p-m-2  btn"
           ></p-button>
-
-          <p-button
-          label="Generuoti"
-          icon="pi pi-spinner"
-          iconPos="left"
-          styleClass="p-button-success p-button-outlined p-mb-2 p-m-2  btn"
-        ></p-button>
-
 
           <p-splitButton
             label="Pažymėtiems"
@@ -48,34 +117,39 @@
     </div>
 
     <div class="card right" *ngIf="ImportTab">
-    <p-toolbar>
-      <div class="p-toolbar-group-left">
-  
-      <p-button
-        label="Atsisiųsti šabloną"
-        icon="pi pi-file-excel"
-        iconPos="left"
-        styleClass="p-button-success p-button-outlined  p-mb-2 p-m-2  btn"
-      ></p-button>
+      <p-toolbar>
+        <div class="p-toolbar-group-left">
+          <p-button
+            label="Atsisiųsti šabloną"
+            icon="pi pi-file-excel"
+            iconPos="left"
+            styleClass="p-button-success p-button-outlined  p-mb-2 p-m-2  btn"
+          ></p-button>
 
-        <p-button
-          label="Įkelti failą"
-          icon="pi pi-paperclip"
-          iconPos="left" (click)="filepresent = true;"
-          styleClass="p-button-success p-button-outlined  p-mb-2 p-m-2  btn"
-        ></p-button>
+          <p-button
+            label="Įkelti failą"
+            icon="pi pi-paperclip"
+            iconPos="left"
+            (click)="filepresent = true"
+            styleClass="p-button-success p-button-outlined  p-mb-2 p-m-2  btn"
+          ></p-button>
 
-        <span *ngIf="filepresent"><p-chip label="Failas_importavimui.xls" [removable]="true"></p-chip></span>
-        <p-button *ngIf="filepresent"
-        label="Importuoti"
-        icon="pi pi-arrow-circle-down"
-        iconPos="left" (click)="ImportTab = false;filepresent = false;"
-        styleClass="p-button-success p-button-outlined p-mb-2 p-m-2  btn"
-      ></p-button>
+          <div id="dropArea" *ngIf="!filepresent">įkelkite failą</div>
 
-      </div>
-    </p-toolbar>
-  </div>
+          <span *ngIf="filepresent"
+            ><p-chip label="Failas_importavimui.xls" [removable]="true"></p-chip
+          ></span>
+          <p-button
+            *ngIf="filepresent"
+            label="Importuoti"
+            icon="pi pi-arrow-circle-down"
+            iconPos="left"
+            (click)="ImportTab = false; filepresent = false"
+            styleClass="p-button-success p-button-outlined p-mb-2 p-m-2  btn"
+          ></p-button>
+        </div>
+      </p-toolbar>
+    </div>
 
     <p-table
       [value]="policies"
@@ -145,21 +219,43 @@
               </ng-template>
             </p-columnFilter>
           </th>
-          <th pResizableColumn pSortableColumn="policy" style=" white-space: pre-wrap;">Poliso numeris</th>
+          <th
+            pResizableColumn
+            pSortableColumn="policy"
+            style=" white-space: pre-wrap;"
+          >
+            Poliso numeris
+          </th>
 
           <th pResizableColumn pSortableColumn="beginDate">Pradžia</th>
           <th pResizableColumn pSortableColumn="endDate">Pabaiga</th>
           <th pResizableColumn pSortableColumn="vehicle.type">Tipas</th>
-          <th pResizableColumn pSortableColumn="vehicle.make" style=" white-space: pre-wrap;">Markė ir modelis</th>
-          <th pResizableColumn style=" white-space: pre-wrap;">Valstybinis numeris</th>
+          <th
+            pResizableColumn
+            pSortableColumn="vehicle.make"
+            style=" white-space: pre-wrap;"
+          >
+            Markė ir modelis
+          </th>
+          <th pResizableColumn style=" white-space: pre-wrap;">
+            Valstybinis numeris
+          </th>
           <th pResizableColumn>VIN</th>
-          <th pResizableColumn style=" white-space: pre-wrap;">Signalizacijos lygis</th>
+          <th pResizableColumn style=" white-space: pre-wrap;">
+            Signalizacijos lygis
+          </th>
           <th pResizableColumn>Vertė</th>
           <th pResizableColumn>Įmoka</th>
-          <th pResizableColumn pSortableColumn="additionalInsurance.name" style=" white-space: pre-wrap;">
+          <th
+            pResizableColumn
+            pSortableColumn="additionalInsurance.name"
+            style=" white-space: pre-wrap;"
+          >
             Papildomi dr.
           </th>
-          <th pResizableColumn style=" white-space: pre-wrap;">Papild. dr. įmoka</th>
+          <th pResizableColumn style=" white-space: pre-wrap;width:auto;">
+            Papild. dr. įmoka
+          </th>
         </tr>
       </ng-template>
 
@@ -192,7 +288,12 @@
           </td>
           <td>{{ policy.policy }}</td>
           <td>{{ policy.beginDate }}</td>
-          <td><span *ngIf="!policy.cancelationDate">{{ policy.endDate }}</span><span *ngIf="policy.cancelationDate" style="color:red;"> {{ policy.cancelationDate }}</span></td>
+          <td>
+            <span *ngIf="!policy.cancelationDate">{{ policy.endDate }}</span
+            ><span *ngIf="policy.cancelationDate" style="color:red;">
+              {{ policy.cancelationDate }}</span
+            >
+          </td>
 
           <td>{{ policy.vehicle.type }}</td>
           <td>{{ policy.vehicle.make }} {{ policy.vehicle.model }}</td>
@@ -202,156 +303,217 @@
           <td>{{ policy.vehicle.value }}</td>
           <td>{{ policy.premium }}</td>
           <td>{{ policy.additionalInsurance.name }}</td>
-          <td>
+          <td style="width:auto;">
             {{ policy.additionalInsurance.premium }}
           </td>
         </tr>
       </ng-template>
 
       <ng-template pTemplate="rowexpansion" let-policy>
-        <tr >
-         
-          <td>
-          <div class="p-p-3">
-
-          <table class="p-datatable-gridline" style="width:100%"> 
-        
-        <tr *ngIf="policy.error" >
-          <td colspan="2" style="background-color:#f1f1f1;padding:5px;margin:5px">
-          <span style="color:red;">{{policy.error}}</span>
-          </td>
-        </tr>
-
-          <tr>
-            <th style="background-color:#f1f1f1;padding:3px;width:50%">Transporto priemonė</th>   
-            <th style="background-color:#f1f1f1;padding:3px">Finansiniai duomenys</th>
-          </tr>
-             <tr>
-           
-           <td>
-           
-          <table>
-            <tr>
-              <td><label for="vehicleType">Transporto priemonės tipas</label></td>
-              <td><label style="font-weight:500;">{{policy.vehicle.type}}</label> </td>
-            </tr>
-            <tr>
-            <td><label for="MakeModel">Markė ir modelis</label></td>
-             <td><label style="font-weight:500;">{{policy.vehicle.make}} {{policy.vehicle.make}}</label> </td>
-          </tr>
-          <tr>
-          <td><label for="MakeModel">Valstybinis numeris</label></td>
-           <td><label style="font-weight:500;">{{policy.vehicle.plateNo}}</label> </td>
-        </tr>
         <tr>
-        <td><label for="MakeModel">VIN numeris</label></td>
-         <td><label style="font-weight:500;">{{policy.vehicle.vinNo}}</label> </td>
-      </tr>
-      <tr>
-      <td><label for="MakeModel">Gamybos metai</label></td>
-      <td><label style="font-weight:500;">{{policy.vehicle.manufYear}} m.</label> </td>
-   </tr>
-   <tr>
-   <td><label for="MakeModel">Masė</label></td>
-   <td><label style="font-weight:500;">{{policy.vehicle.mass}} kg.</label> </td>
-</tr>
-<tr>
-<td><label for="MakeModel">Galia</label></td>
-<td><label style="font-weight:500;">{{policy.vehicle.power}} kW</label> </td>
-</tr>
-<tr>
-<td><label for="MakeModel">Kėbulas</label></td>
-<td><label style="font-weight:500;">{{policy.vehicle.bodyType}}</label> </td>
-</tr>
-<tr>
-<td><label for="MakeModel">Kuro tipas</label></td>
-<td><label style="font-weight:500;">{{policy.vehicle.fuelType}}</label> </td>
-</tr>
+          <td style="flex:0 0 100%;">
+            <div class="p-p-3">
+              <table class="p-datatable-gridline" style="width:100%">
+                <tr *ngIf="policy.error">
+                  <td
+                    colspan="2"
+                    style="background-color:#f1f1f1;padding:5px;margin:5px"
+                  >
+                    <span style="color:red;">{{ policy.error }}</span>
+                  </td>
+                </tr>
 
-<tr>
-<td><label for="MakeModel">Draudimo variantas</label></td>
-<td><label style="font-weight:500;">{{policy.vehicle.riskPackageName}}</label> </td>
-</tr>
-<tr>
-<td><label for="MakeModel">Išskaita</label></td>
-<td><label style="font-weight:500;">{{policy.vehicle.deductiblePackageName}}</label> </td>
-</tr>
+                <tr>
+                  <th style="background-color:#f1f1f1;padding:3px;width:50%">
+                    Transporto priemonė
+                  </th>
+                  <th style="background-color:#f1f1f1;padding:3px">
+                    Finansiniai duomenys
+                  </th>
+                </tr>
+                <tr>
+                  <td>
+                    <table>
+                      <tr>
+                        <td>
+                          <label for="vehicleType"
+                            >Transporto priemonės tipas</label
+                          >
+                        </td>
+                        <td>
+                          <label style="font-weight:500;">{{
+                            policy.vehicle.type
+                          }}</label>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><label for="MakeModel">Markė ir modelis</label></td>
+                        <td>
+                          <label style="font-weight:500;"
+                            >{{ policy.vehicle.make }}
+                            {{ policy.vehicle.make }}</label
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label for="MakeModel">Valstybinis numeris</label>
+                        </td>
+                        <td>
+                          <label style="font-weight:500;">{{
+                            policy.vehicle.plateNo
+                          }}</label>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><label for="MakeModel">VIN numeris</label></td>
+                        <td>
+                          <label style="font-weight:500;">{{
+                            policy.vehicle.vinNo
+                          }}</label>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><label for="MakeModel">Gamybos metai</label></td>
+                        <td>
+                          <label style="font-weight:500;"
+                            >{{ policy.vehicle.manufYear }} m.</label
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><label for="MakeModel">Masė</label></td>
+                        <td>
+                          <label style="font-weight:500;"
+                            >{{ policy.vehicle.mass }} kg.</label
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><label for="MakeModel">Galia</label></td>
+                        <td>
+                          <label style="font-weight:500;"
+                            >{{ policy.vehicle.power }} kW</label
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><label for="MakeModel">Kėbulas</label></td>
+                        <td>
+                          <label style="font-weight:500;">{{
+                            policy.vehicle.bodyType
+                          }}</label>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><label for="MakeModel">Kuro tipas</label></td>
+                        <td>
+                          <label style="font-weight:500;">{{
+                            policy.vehicle.fuelType
+                          }}</label>
+                        </td>
+                      </tr>
 
-<tr>
-<td colspan="2">
+                      <tr>
+                        <td>
+                          <label for="MakeModel">Draudimo variantas</label>
+                        </td>
+                        <td>
+                          <label style="font-weight:500;">{{
+                            policy.vehicle.riskPackageName
+                          }}</label>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><label for="MakeModel">Išskaita</label></td>
+                        <td>
+                          <label style="font-weight:500;">{{
+                            policy.vehicle.deductiblePackageName
+                          }}</label>
+                        </td>
+                      </tr>
 
-<p-button *ngIf="!policy.cancelationDate"
-label="Nutraukti"
-icon="pi pi-times"
-iconPos="left"
-styleClass="p-button-success p-button-outlined p-mb-2 p-m-2  btn"
-></p-button>
+                      <tr>
+                        <td colspan="2">
+                          <p-button
+                            *ngIf="!policy.cancelationDate && policy.flag == 0"
+                            label="Nutraukti"
+                            icon="pi pi-times"
+                            iconPos="left" 
+                            styleClass="p-button-success p-button-outlined p-mb-2 p-m-2  btn"
+                          ></p-button>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
 
-</td>
-</tr>
-          </table>
-   
-           
-       </td>
-      
-       
-         <td>
-        <table>
-          <tr>
-          <tr>
-          <td><label for="MakeModel">Pasirašyta įmoka</label></td>
-          <td><label style="font-weight:500;">{{policy.premium}} EUR</label> </td>
-          </tr>
-          <tr>
-          <td><label for="MakeModel">Papildomi draudimai</label></td>
-          <td><label style="font-weight:500;">{{policy.additionalInsurance.premium  }} EUR</label> </td>
-          </tr>
-          <tr>
-            <td colspan="2">
-      
-         <p-table
-           [rowHover]="true"
-           [value]="policy.schedule"
-           styleClass="p-datatable-sm"
-         >
-           <ng-template pTemplate="header">
-             <tr>
-               <th pSortableColumn="Nr" style="max-width: 120px">Data</th>
-               <th pSortableColumn="status">Mokėtina suma</th>
-               <th pSortableColumn="status">Apmokėta suma</th>
-             </tr>
-           </ng-template>
-     
-           <ng-template pTemplate="body" let-Schedule>
-             <tr>
-               <td style="max-width: 120px">
-                 <span>{{ Schedule.date }}</span>
-               </td>
-               <td>{{ Schedule.paymentSum }}</td>
-               <td>{{ Schedule.paidSum }}</td>
-             </tr>
-           </ng-template>
-           <ng-template pTemplate="summary">
-           <div class="p-d-flex p-ai-center p-jc-between">
-               Bendra įmoka: {{ sum(policy.premium ,policy.additionalInsurance.premium)  }} EUR<br>
-               Skola datai: 0 EUR<br>
-               <span *ngIf="policy.cancelationDate">Nutraukimo data: {{policy.cancelationDate}}</span>
-           </div>
-       </ng-template>
+                  <td>
+                    <table>
+                      <tr></tr>
+                      <tr>
+                        <td><label for="MakeModel">Pasirašyta įmoka</label></td>
+                        <td>
+                          <label style="font-weight:500;"
+                            >{{ policy.premium }} EUR</label
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <label for="MakeModel">Papildomi draudimai</label>
+                        </td>
+                        <td>
+                          <label style="font-weight:500;"
+                            >{{ policy.additionalInsurance.premium }} EUR</label
+                          >
+                        </td>
+                      </tr>
+                      <tr>
+                        <td colspan="2">
+                          <p-table
+                            [rowHover]="true"
+                            [value]="policy.schedule"
+                            styleClass="p-datatable-sm"
+                          >
+                            <ng-template pTemplate="header">
+                              <tr>
+                                <th
+                                  pSortableColumn="Nr"
+                                  style="max-width: 120px"
+                                >
+                                  Data
+                                </th>
+                                <th pSortableColumn="status">Mokėtina suma</th>
+                                <th pSortableColumn="status">Apmokėta suma</th>
+                              </tr>
+                            </ng-template>
 
-         </p-table>
-        </td>
-      </tr>
-        </table>
-        
-        </td>
-     </tr>
-
-   
-   </table>
-
-
-  </div>
+                            <ng-template pTemplate="body" let-Schedule>
+                              <tr>
+                                <td style="max-width: 120px">
+                                  <span>{{ Schedule.date }}</span>
+                                </td>
+                                <td>{{ Schedule.paymentSum }}</td>
+                                <td>{{ Schedule.paidSum }}</td>
+                              </tr>
+                            </ng-template>
+                            <ng-template pTemplate="summary">
+                              <div class="p-d-flex p-ai-center p-jc-between">
+                                Bendra įmoka: XXX EUR<br />
+                                <span *ngIf="policy.cancelationDate"
+                                  >Nutraukimo data:
+                                  {{ policy.cancelationDate }}</span
+                                >
+                              </div>
+                            </ng-template>
+                          </p-table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </div>
           </td>
         </tr>
       </ng-template>
@@ -359,7 +521,7 @@ styleClass="p-button-success p-button-outlined p-mb-2 p-m-2  btn"
   </p-tabPanel>
 
   <p-tabPanel header="Sutarties sąlygos">
-    <h2>Pagrindiniai duomenys</h2>
+    <h3>Pagrindiniai duomenys</h3>
     <div class="p-fluid">
       <div class="p-field p-grid">
         <label for="firstname4" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0"
@@ -434,7 +596,66 @@ styleClass="p-button-success p-button-outlined p-mb-2 p-m-2  btn"
         <div class="p-col-6 p-md-10"></div>
       </div>
     </div>
-    <h2>Kitos sąlygos</h2>
+
+    <h3>Finansiniai duomenys</h3>
+    <div class="p-field p-grid">
+    <label for="lastname4" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0"
+      >Komisiniai:</label
+    >
+
+    <div class="p-col-12 p-md-10">
+    <table style="width:400px">
+      <tr style="text-align:left"> 
+        <th style="border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1">Rūšis</th>
+        <th style="border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1">Tarifas</th>
+      </tr>
+      <tr>
+        <td style="border:1px solid #f1f1f1;padding:3px">CASCO parkai transporto draudimas</td>
+        <td style="border:1px solid #f1f1f1;padding:3px">0.02</td>
+      </tr>
+      <tr>
+      <td style="border:1px solid #f1f1f1;padding:3px">CASCO parkai Vairuotojas ir keleiviai</td>
+      <td style="border:1px solid #f1f1f1;padding:3px">0.02</td>
+    </tr>
+    <tr>
+    <td style="border:1px solid #f1f1f1;padding:3px">CASCO parkai pagalba kelyje</td>
+    <td style="border:1px solid #f1f1f1;padding:3px">0.00</td>
+  </tr>
+    </table>
+    </div>
+    <div class="p-col-6 p-md-10"></div>
+  </div>
+
+  <div class="p-field p-grid">
+  <label for="lastname4" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0"
+    >Tarifai:</label
+  >
+
+  <div class="p-col-12 p-md-10">
+  <table style="width:400px">
+    <tr style="text-align:left"> 
+      <th style="border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1">Draudimo tipas</th>
+      <th style="border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1">Proc. nuo vertės</th>
+    </tr>
+    <tr>
+      <td style="border:1px solid #f1f1f1;padding:3px">Lengvieji automobiliai</td>
+      <td style="border:1px solid #f1f1f1;padding:3px">7%</td>
+    </tr>
+    <tr>
+    <td style="border:1px solid #f1f1f1;padding:3px">Krovininiai automobiliai iki 3.5 t.</td>
+    <td style="border:1px solid #f1f1f1;padding:3px">7%</td>
+  </tr>
+  <tr>
+  <td style="border:1px solid #f1f1f1;padding:3px">Krovininiai automobiliai</td>
+  <td style="border:1px solid #f1f1f1;padding:3px">5%</td>
+</tr>
+  </table>
+  </div>
+  <div class="p-col-6 p-md-10"></div>
+</div>
+
+
+    <h3>Kitos sąlygos</h3>
     <p-table
       [value]="parkConditions"
       sortField="insType"
@@ -446,8 +667,8 @@ styleClass="p-button-success p-button-outlined p-mb-2 p-m-2  btn"
       <ng-template pTemplate="header">
         <tr>
           <th style="width:240px">Draudimo tipas</th>
-          <th style="width:100px">Amžius nuo [</th>
-          <th style="width:100px">Amžius iki )</th>
+          <th style="width:120px">Amžius nuo [</th>
+          <th style="width:120px">Amžius iki )</th>
           <th style="min-width:200px">Reikšmė</th>
         </tr>
       </ng-template>
@@ -487,7 +708,7 @@ styleClass="p-button-success p-button-outlined p-mb-2 p-m-2  btn"
     >
       <ng-template pTemplate="header">
         <tr>
-          <th pSortableColumn="Nr" style="max-width: 50px">Nr.</th>
+          <th pSortableColumn="Nr" style="width: 50px">Nr.</th>
           <th pSortableColumn="status">Data</th>
         </tr>
       </ng-template>

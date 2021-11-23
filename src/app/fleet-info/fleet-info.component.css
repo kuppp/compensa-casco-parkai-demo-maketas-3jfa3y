@@ -26,3 +26,19 @@
   background-color:#f1f1f1;
   }
 
+  #dropArea {
+    
+    border: 2px dashed rgb(0,134,65);
+    float: left;
+    font-size: 1em;
+    height: 40px;
+    margin: 5px;
+    padding:5px;
+    position: relative;
+    text-align: center;
+    width: 600px;
+    color:rgb(0,134,65);
+}
+#dropArea.hover {
+    background-color: #CCCCCC;
+}

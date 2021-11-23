@@ -17,6 +17,7 @@ export class FleetInfoComponent implements OnInit {
   flags: any[];
   panel1: number = 100;
   panel2: number = 0;
+  displayADD: boolean = false;
 
   constructor(private PolicyListService: PolicyListService) { }
 
@@ -51,8 +52,8 @@ export class FleetInfoComponent implements OnInit {
       {conditionType: 'Papildomi draudimai', insType: 'Lengvieji automobiliai', value:'Išplėstinė pagalba kelyje, Vairuotojai ir keleveikiai'},
       {conditionType: 'Išskaita', insType: 'Lengvieji automobiliai', value:'50 EUR / 10% vagystei'},
       {conditionType: 'Išskaita', insType: 'Krovininai automobiliai', value:'100 EUR / 10% vagystei'},
-      {conditionType: 'Papildomi draudimai', insType: 'Krovininai automobiliai iki 3.5 t', value:'Vairuotojai ir keleveikiai'},
-      {conditionType: 'Papildomi draudimai', insType: 'Krovininai automobiliai', value:'Vairuotojai ir keleveikiai'}
+      {conditionType: 'Papildomi draudimai', insType: 'Krovininai automobiliai iki 3.5 t', value:'Vairuotojai ir keleiviai'},
+      {conditionType: 'Papildomi draudimai', insType: 'Krovininai automobiliai', value:'Vairuotojai ir keleiviai'}
   ]
 
   this.flags = [
@@ -60,6 +61,16 @@ export class FleetInfoComponent implements OnInit {
     {name:"Klaida", value: "1", image: "pi-bell" },
     {name:"Nepatvirtintas", value: "2", image: "pi-circle" }
   ];
-  }
 
+
+  }
+  showDialogAddVehicles() {
+    this.displayADD = true;
+}
+
+paste(event: ClipboardEvent){
+  let clipboardData = event.clipboardData;
+  let pastedText = clipboardData.getData('text');
+  console.log(pastedText);
+}
 }
