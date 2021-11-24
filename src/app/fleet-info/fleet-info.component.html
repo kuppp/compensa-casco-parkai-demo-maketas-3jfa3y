@@ -1,14 +1,14 @@
-<p-dialog header="Title" [(visible)]="displayADD" (paste)="paste($event)" [style]="{width: '50vw'}">
+<p-dialog header="Title" [(visible)]="displayADD" (paste)="paste($event)" [style]="{width: '90vw'}">
 <ng-template pTemplate="header">
 Įtraukti naujas transporto priemones
 </ng-template>
 
-<table>
+<table style="border-collapse:collapse;">
   <tr>
     <th style="background-color:#f1f1f1;padding:3px;width:100px;">Valstybinis nr.*</th>
     <th style="background-color:#f1f1f1;padding:3px;">VIN*</th>
     <th style="background-color:#f1f1f1;padding:3px;width:100px;">Poliso pradžia*</th>
-<th style="background-color:#f1f1f1;padding:3px;"width:100px;>Vertė</th>
+<th style="background-color:#f1f1f1;padding:3px;width:100px;">Vertė</th>
 <th style="background-color:#f1f1f1;padding:3px;">TP tipo kodas</th>
 <th style="background-color:#f1f1f1;padding:3px;">TP marke</th>
 <th style="background-color:#f1f1f1;padding:3px;">TP modelis</th>
@@ -16,10 +16,10 @@
 </tr>
 <tr>
 
+  <td style="width:100px;"><input type="text"  style="width:100px"></td>
   <td><input type="text"></td>
-  <td><input type="text"></td>
-  <td><input type="text"></td>
-  <td><input type="text"></td>
+  <td style="width:100px;"><input type="text"  style="width:100px;"></td>
+  <td  style="width:100px;"><input type="text"  style="width:100px;"></td>
   <td><input type="text"></td>
   <td><input type="text"></td>
   <td><input type="text"></td>
@@ -29,22 +29,10 @@
 <tr>
 
 
+<td  style="width:100px;"><input type="text"  style="width:100px;"></td>
 <td><input type="text"></td>
-<td><input type="text"></td>
-<td><input type="text"></td>
-<td><input type="text"></td>
-<td><input type="text"></td>
-<td><input type="text"></td>
-<td><input type="text"></td>
-<td><input type="text"></td>
-</tr>
-<tr>
-
-
-<td><input type="text"></td>
-<td><input type="text"></td>
-<td><input type="text"></td>
-<td><input type="text"></td>
+<td style="width:100px;"><input type="text" style="width:100px;"></td>
+<td  style="width:100px;"><input type="text"  style="width:100px;"></td>
 <td><input type="text"></td>
 <td><input type="text"></td>
 <td><input type="text"></td>
@@ -53,11 +41,23 @@
 <tr>
 
 
+<td  style="width:100px;"><input type="text"  style="width:100px;"></td>
+<td><input type="text"></td>
+<td  style="width:100px;"><input type="text"  style="width:100px;"></td>
+<td  style="width:100px;"><input type="text"  style="width:100px;"></td>
 <td><input type="text"></td>
 <td><input type="text"></td>
 <td><input type="text"></td>
 <td><input type="text"></td>
+</tr>
+<tr>
+
+
+<td  style="width:100px;"><input type="text"  style="width:100px;"></td>
 <td><input type="text"></td>
+<td  style="width:100px;"><input type="text"  style="width:100px;"></td>
+<td  style="width:100px;"><input type="text" style="width:100px;"></td>
+<td ><input type="text"></td>
 <td><input type="text"></td>
 <td><input type="text"></td>
 <td><input type="text"></td>
@@ -709,7 +709,10 @@ styleClass="p-button-primary p-mb-2 p-mr-2 btn"
       <ng-template pTemplate="header">
         <tr>
           <th pSortableColumn="Nr" style="width: 50px">Nr.</th>
-          <th pSortableColumn="status">Data</th>
+          <th style="width: 100px">Data</th>
+          <th style="width: 160px">Mokėtina suma</th>
+          <th style="width: 160px">Apmokėta suma</th>
+          <th style="width: 160px">Sąskaita</th>
         </tr>
       </ng-template>
 
@@ -718,7 +721,16 @@ styleClass="p-button-primary p-mb-2 p-mr-2 btn"
           <td style="max-width: 50px">
             {{ Schedule.number }}
           </td>
-          <td>{{ Schedule.date }}</td>
+          <td style="width: 100px">{{ Schedule.date }}</td>
+          <td> {{Schedule.paymentSum}}</td>
+          <td> {{Schedule.paidSum}}</td>
+          <td style="width: 160px"><p-button
+          *ngIf="Schedule.paidSum >0 "
+          label="Sąskaita"
+          icon="pi pi-file-pdf"
+          iconPos="left" 
+          styleClass="p-button-success p-button-outlined"
+        ></p-button></td>
         </tr>
       </ng-template>
     </p-table>

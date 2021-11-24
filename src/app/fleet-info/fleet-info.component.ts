@@ -41,7 +41,7 @@ export class FleetInfoComponent implements OnInit {
   ];
 
   this.paymentSchedule = [
-      {"number":1, "date":'2022-01-01'}, {number:2, date:'2022-04-01'}, {number:3, date:'2022-08-01'},{number:4, date:'2022-12-01'}
+      {"number":1, "date":'2022-01-01', paymentSum:7600.00, paidSum: 7400}, {number:2, date:'2022-04-01', paymentSum:76000.00, paidSum:0}, {number:3, date:'2022-08-01',paymentSum: 65000.00, paidSum:0},{number:4, date:'2022-12-01',paymentSum: 60000.00, paidSum:0}
   ]
   this.parkConditions = [
       {conditionType: 'Rizikų paketas', insType: 'Lengvieji automobiliai', value:'Bazinis'},
