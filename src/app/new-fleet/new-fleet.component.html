@@ -26,104 +26,81 @@ styleClass="p-button-primary p-mb-2 p-mr-2 btn"
 
 <p-tabView [(activeIndex)]="index">
   <p-tabPanel header="Parko duomenys">
+
+<div class="p-grid">
+  <div class="p-col"><label for="policyholder" class="p-col-3">Draudėjas</label></div>
+  <div class="p-col"><input id="policyholder" type="text" pInputText value="UAB TRANSPORTO ĮMONĖ" /></div>
+  <div class="p-col"><label for="policyholdercode" class="p-col-3 ">Kodas</label></div>
+  <div class="p-col"><input id="policyholder" type="text" pInputText value="10999939"/></div>
+</div>
+<div class="p-grid">
+<div class="p-col"><label for="policyholder" class="p-col-3">Mokėtojas</label></div>
+<div class="p-col"><input id="policyholder" type="text" pInputText value="SEB LIZINGAS" /></div>
+<div class="p-col"><label for="policyholdercode" class="p-col-3 ">Kodas</label></div>
+<div class="p-col"><input id="policyholder" type="text" pInputText value="11110000"/></div>
+</div>
+<div class="p-grid">
+<div class="p-col"><label for="policyholder" class="p-col-3">Naudos gavėjas</label></div>
+<div class="p-col"><input id="policyholder" type="text" pInputText value="SEB LIZINGAS" /></div>
+<div class="p-col"><label for="policyholdercode" class="p-col-3 ">Kodas</label></div>
+<div class="p-col"><input id="policyholder" type="text" pInputText value="11110000"/></div>
+</div>
+<div class="p-grid">
+<div class="p-col"><label for="policyholder" class="p-col-3">Išrašymo data</label></div>
+<div class="p-col"><input id="policyholder" type="text" pInputText value="2021-12-31" disabled /></div>
+<div class="p-col"></div>
+<div class="p-col"></div>
+</div>
+
+<div class="p-grid">
+<div class="p-col"><label for="policyholder" class="p-col-3">Galiojimo datos</label></div>
+<div class="p-col"><input
+  style="width:100px"
+  class="p-mr-2"
+  id="lastname4"
+  type="text"
+  pInputText
+  value="2021-12-31"
+  />
+  <input
+  style="width:100px"
+  type="text"
+  pInputText
+  value="2021-12-31"
+  /></div>
+<div class="p-col"></div>
+<div class="p-col"></div>
+</div>
+
+
+<div class="p-grid">
+<div class="p-col-3"><label for="policyholder" class="p-col-3">Komisiniai</label></div>
+<div class="p-col-9">
+<table >
+<tr style="text-align:left"> 
+  <th style="border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1">Rūšis</th>
+  <th style="border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1">Tarifas</th>
+</tr>
+<tr>
+  <td style="border:1px solid #f1f1f1;padding:3px">CASCO parkai transporto draudimas</td>
+  <td style="border:1px solid #f1f1f1;padding:3px">0.02</td>
+</tr>
+<tr>
+<td style="border:1px solid #f1f1f1;padding:3px">CASCO parkai Vairuotojas ir keleiviai</td>
+<td style="border:1px solid #f1f1f1;padding:3px">0.02</td>
+</tr>
+<tr>
+<td style="border:1px solid #f1f1f1;padding:3px">CASCO parkai pagalba kelyje</td>
+<td style="border:1px solid #f1f1f1;padding:3px">0.00</td>
+</tr>
+</table>
+</div>
+</div>
+
+
+
     <div class="p-fluid">
-      <div class="p-field p-grid">
-        <label for="lastname4" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0"
-          >Draudėjas</label
-        >
-        <div class="p-col-12 p-md-10">
-          <input
-            id="lastname4"
-            type="text"
-            pInputText
-            value="UAB TRANSPORTO ĮMONĖ"
-            style="width:400px"
-          />
-        </div>
-      </div>
-      <div class="p-field p-grid">
-      <label for="lastname4" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0"
-        >Draudėjo kodas</label
-      >
-      <div class="p-col-12 p-md-10">
-        <input
-          id="lastname4"
-          type="text"
-          pInputText
-          value="111000112"
-          style="width:400px"
-        />
-      </div>
-    </div>
-
-      <div class="p-field p-grid">
-        <label for="lastname4" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0"
-          >Išrašymo data</label
-        >
-        <div class="p-col-12 p-md-10">
-          <input
-            id="lastname4"
-            type="text"
-            pInputText
-            disabled
-            value="2021-12-31"
-            style="width:400px"
-          />
-        </div>
-      </div>
-
-      <div class="p-field p-grid">
-        <label for="lastname4" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0"
-          >Galiojimo datos</label
-        >
-
-        <div class="p-col-12 p-md-10">
-          <input
-            style="width:200px"
-            class="p-mr-2"
-            id="lastname4"
-            type="text"
-            pInputText
-            value="2021-12-31"
-          />
-          <input
-            style="width:200px"
-            type="text"
-            pInputText
-            value="2021-12-31"
-          />
-        </div>
-        <div class="p-col-6 p-md-10"></div>
-      </div>
-
-      <div class="p-field p-grid">
-      <label for="lastname4" class="p-col-12 p-mb-2 p-md-2 p-mb-md-0"
-        >Komisiniai:</label
-      >
-
-      <div class="p-col-12 p-md-10">
-      <table style="width:400px">
-        <tr style="text-align:left"> 
-          <th style="border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1">Rūšis</th>
-          <th style="border:1px solid #f1f1f1;padding:3px; background-color:#f1f1f1">Tarifas</th>
-        </tr>
-        <tr>
-          <td style="border:1px solid #f1f1f1;padding:3px">CASCO parkai transporto draudimas</td>
-          <td style="border:1px solid #f1f1f1;padding:3px">0.02</td>
-        </tr>
-        <tr>
-        <td style="border:1px solid #f1f1f1;padding:3px">CASCO parkai Vairuotojas ir keleiviai</td>
-        <td style="border:1px solid #f1f1f1;padding:3px">0.02</td>
-      </tr>
-      <tr>
-      <td style="border:1px solid #f1f1f1;padding:3px">CASCO parkai pagalba kelyje</td>
-      <td style="border:1px solid #f1f1f1;padding:3px">0.00</td>
-    </tr>
-      </table>
-      </div>
-      <div class="p-col-6 p-md-10"></div>
-    </div>
-
+  
       
       <br />
 
