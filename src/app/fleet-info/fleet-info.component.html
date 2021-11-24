@@ -1,14 +1,14 @@
-<p-dialog header="Title" [(visible)]="displayADD" (paste)="paste($event)">
+<p-dialog header="Title" [(visible)]="displayADD" (paste)="paste($event)" [style]="{width: '50vw'}">
 <ng-template pTemplate="header">
 Įtraukti naujas transporto priemones
 </ng-template>
 
 <table>
   <tr>
-    <th style="background-color:#f1f1f1;padding:3px;">Valstybinis nr.*</th>
+    <th style="background-color:#f1f1f1;padding:3px;width:100px;">Valstybinis nr.*</th>
     <th style="background-color:#f1f1f1;padding:3px;">VIN*</th>
-    <th style="background-color:#f1f1f1;padding:3px;">Poliso pradžia*</th>
-<th style="background-color:#f1f1f1;padding:3px;">Vertė</th>
+    <th style="background-color:#f1f1f1;padding:3px;width:100px;">Poliso pradžia*</th>
+<th style="background-color:#f1f1f1;padding:3px;"width:100px;>Vertė</th>
 <th style="background-color:#f1f1f1;padding:3px;">TP tipo kodas</th>
 <th style="background-color:#f1f1f1;padding:3px;">TP marke</th>
 <th style="background-color:#f1f1f1;padding:3px;">TP modelis</th>

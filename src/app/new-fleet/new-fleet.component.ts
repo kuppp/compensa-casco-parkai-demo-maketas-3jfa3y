@@ -18,15 +18,18 @@ export class NewFleetComponent implements OnInit {
   ngOnInit() {
 
     this.parkConditions = [
-      {conditionType: 'Rizikų paketas', insType: 'Lengvieji automobiliai', value:'Bazinis'},
-      {conditionType: 'Rizikų paketas', insType: 'Krovininai automobiliai', value:'Super'},
-      {conditionType: 'Rizikų paketas', insType: 'Krovininai automobiliai iki 3.5 t', value:'Bazinis'},
-      {conditionType: 'Kriterijai', insType: 'Krovininai automobiliai', ageFrom: 0, ageTo: 15, value:'TP remontas Drudėjo pasirinkimu'},
-      {conditionType: 'Kriterijai', insType: 'Lengvieji automobiliai', ageFrom: 9, ageTo: 15, value:'TP remontas Draudiko pasirinkimu'},
-      {conditionType: 'Kriterijai', insType: 'Lengvieji automobiliai', ageFrom: 0, ageTo: 9, value:'TP remontas Draudėjo pasirinkimu'},
+      {conditionType: 'Draudimo variantas', insType: 'Lengvieji automobiliai', value:'Bazinis'},
+      {conditionType: 'Draudimo variantas', insType: 'Krovininai automobiliai', value:'Super'},
+      {conditionType: 'Draudimo variantas', insType: 'Krovininai automobiliai iki 3.5 t', value:'Bazinis'},
+      {conditionType: 'Įmoka', insType: 'Krovininai automobiliai iki 3.5 t', value:'3% nuo vertės'},
+      {conditionType: 'Įmoka', insType: 'Krovininai automobiliai', value:'3% nuo vertės'},
+      {conditionType: 'Įmoka', insType: 'Lengvieji automobiliai', value:'3% nuo vertės'},
+      {conditionType: 'Papildomos sąlygos', insType: 'Krovininai automobiliai', ageFrom: 0, ageTo: 15, value:'TP remontas Drudėjo pasirinkimu'},
+      {conditionType: 'Papildomos sąlygos', insType: 'Lengvieji automobiliai', ageFrom: 9, ageTo: 15, value:'TP remontas Draudiko pasirinkimu'},
+      {conditionType: 'Papildomos sąlygos', insType: 'Lengvieji automobiliai', ageFrom: 0, ageTo: 9, value:'TP remontas Draudėjo pasirinkimu'},
       {conditionType: 'Papildomi draudimai', insType: 'Lengvieji automobiliai', value:'Išplėstinė pagalba kelyje, Vairuotojai ir keleveikiai'},
-      {conditionType: 'Papildomi draudimai', insType: 'Krovininai automobiliai iki 3.5 t', value:'Vairuotojai ir keleveikiai'},
-      {conditionType: 'Papildomi draudimai', insType: 'Krovininai automobiliai', value:'Vairuotojai ir keleveikiai'}
+      {conditionType: 'Papildomi draudimai', insType: 'Krovininai automobiliai iki 3.5 t', value:'Vairuotojai ir keleviai'},
+      {conditionType: 'Papildomi draudimai', insType: 'Krovininai automobiliai', value:'Vairuotojai ir keleviai'}
   ]
 
   this.paymentSchedule = [

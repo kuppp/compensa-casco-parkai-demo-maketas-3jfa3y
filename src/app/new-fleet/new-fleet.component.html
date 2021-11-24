@@ -145,7 +145,7 @@ styleClass="p-button-primary p-mb-2 p-mr-2 btn"
 
   <p-tabPanel header="Draudimo sąlygos" >
     <h3>Standartinės draudimo sąlygos</h3>
-    <p>Norint sudetinti kitas sąlygas, perduokite parko draudimą rizikos vertintojui.</p>
+   
     <p-table
       [value]="parkConditions"
       sortField="insType"
@@ -188,6 +188,7 @@ styleClass="p-button-primary p-mb-2 p-mr-2 btn"
         </tr>
       </ng-template>
     </p-table>
+    <p>Norint sudetinti kitas sąlygas, perduokite parko draudimą rizikos vertintojui.</p>
 
     <br />
     <p-toolbar>
@@ -281,39 +282,40 @@ styleClass="p-button-primary p-mb-2 p-mr-2 btn"
   <h5>Nr: PARK 00000002</h5>
   
 <div class="card right">
-  <p-toolbar>
-    
-  <div class="p-toolbar-group-left">
-    <p-button
-      label="Įtraukti naują"
-      icon="pi pi-plus"
-      iconPos="left" (click)="showDialogAddVehicles();"      styleClass="p-button-success p-button-outlined  p-mb-2 p-m-2 btn"
-    ></p-button>
-    <p-button
-      label="Importuoti"
-      icon="pi pi-arrow-circle-down"
-      iconPos="left" (click)="ImportTab = true;" 
-      styleClass="p-button-success p-button-outlined  p-mb-2 p-m-2  btn"
-    ></p-button>
+       <p-toolbar>
+        <div class="p-toolbar-group-left">
+          <p-button
+            label="Įtraukti naują"
+            icon="pi pi-plus"
+            iconPos="left" (click)="showDialogAddVehicles();"
+            styleClass="p-button-success p-button-outlined p-mb-2 p-m-2 btn"
+          ></p-button>
+          <p-button
+            label="Importuoti"
+            icon="pi pi-arrow-circle-down"
+            iconPos="left"
+            (click)="ImportTab = true"
+            styleClass="p-button-success p-button-outlined p-mb-2 p-m-2  btn"
+          ></p-button>
 
-    <p-splitButton
-      label="Pažymėtiems"
-      icon="pi pi-ellipsis-v"
-      (onClick)="save()" diabled
-      [model]="actionMenuItems"
-      styleClass="p-button-primary  p-mr-2 btn"
-    >
-    </p-splitButton>
-    <p-splitButton
-      label="Spausdinti"
-      icon="pi "
-      (onClick)="save()"
-      [model]="printMenuItems"
-      styleClass="p-button-primary  p-mr-2 btn"
-    >
-    </p-splitButton>
-  </div>
-</p-toolbar>
+          <p-splitButton
+            label="Pažymėtiems"
+            icon="pi pi-ellipsis-v"
+            (onClick)="save()"
+            [model]="actionMenuItems"
+            styleClass=" p-button-outlined   p-mr-2 btn"
+          >
+          </p-splitButton>
+          <p-splitButton
+            label="Spausdinti"
+            icon="pi "
+            (onClick)="save()"
+            [model]="printMenuItems"
+            styleClass="p-button-outlined   p-mr-2 btn"
+          >
+          </p-splitButton>
+        </div>
+      </p-toolbar>
 </div>
 
   <p-table
